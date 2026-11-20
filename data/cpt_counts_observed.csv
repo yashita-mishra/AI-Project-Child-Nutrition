@@ -1,0 +1,428 @@
+node,parent_config,state,count
+ethnicity,(no parents),MexAm,82
+ethnicity,(no parents),OthHisp,102
+ethnicity,(no parents),NHWhite,275
+ethnicity,(no parents),NHBlack,105
+ethnicity,(no parents),Asian_Other,100
+parent_edu,(no parents),low,75
+parent_edu,(no parents),mid,297
+parent_edu,(no parents),high,212
+income,ethnicity=MexAm & parent_edu=low,below_poverty,5
+income,ethnicity=MexAm & parent_edu=low,to_185pct,4
+income,ethnicity=MexAm & parent_edu=low,above_185pct,0
+income,ethnicity=MexAm & parent_edu=mid,below_poverty,11
+income,ethnicity=MexAm & parent_edu=mid,to_185pct,11
+income,ethnicity=MexAm & parent_edu=mid,above_185pct,16
+income,ethnicity=MexAm & parent_edu=high,below_poverty,3
+income,ethnicity=MexAm & parent_edu=high,to_185pct,2
+income,ethnicity=MexAm & parent_edu=high,above_185pct,5
+income,ethnicity=OthHisp & parent_edu=low,below_poverty,8
+income,ethnicity=OthHisp & parent_edu=low,to_185pct,4
+income,ethnicity=OthHisp & parent_edu=low,above_185pct,2
+income,ethnicity=OthHisp & parent_edu=mid,below_poverty,19
+income,ethnicity=OthHisp & parent_edu=mid,to_185pct,13
+income,ethnicity=OthHisp & parent_edu=mid,above_185pct,15
+income,ethnicity=OthHisp & parent_edu=high,below_poverty,2
+income,ethnicity=OthHisp & parent_edu=high,to_185pct,1
+income,ethnicity=OthHisp & parent_edu=high,above_185pct,8
+income,ethnicity=NHWhite & parent_edu=low,below_poverty,9
+income,ethnicity=NHWhite & parent_edu=low,to_185pct,3
+income,ethnicity=NHWhite & parent_edu=low,above_185pct,0
+income,ethnicity=NHWhite & parent_edu=mid,below_poverty,19
+income,ethnicity=NHWhite & parent_edu=mid,to_185pct,22
+income,ethnicity=NHWhite & parent_edu=mid,above_185pct,49
+income,ethnicity=NHWhite & parent_edu=high,below_poverty,1
+income,ethnicity=NHWhite & parent_edu=high,to_185pct,11
+income,ethnicity=NHWhite & parent_edu=high,above_185pct,121
+income,ethnicity=NHBlack & parent_edu=low,below_poverty,13
+income,ethnicity=NHBlack & parent_edu=low,to_185pct,1
+income,ethnicity=NHBlack & parent_edu=low,above_185pct,1
+income,ethnicity=NHBlack & parent_edu=mid,below_poverty,21
+income,ethnicity=NHBlack & parent_edu=mid,to_185pct,20
+income,ethnicity=NHBlack & parent_edu=mid,above_185pct,9
+income,ethnicity=NHBlack & parent_edu=high,below_poverty,2
+income,ethnicity=NHBlack & parent_edu=high,to_185pct,3
+income,ethnicity=NHBlack & parent_edu=high,above_185pct,8
+income,ethnicity=Asian_Other & parent_edu=low,below_poverty,8
+income,ethnicity=Asian_Other & parent_edu=low,to_185pct,0
+income,ethnicity=Asian_Other & parent_edu=low,above_185pct,4
+income,ethnicity=Asian_Other & parent_edu=mid,below_poverty,16
+income,ethnicity=Asian_Other & parent_edu=mid,to_185pct,15
+income,ethnicity=Asian_Other & parent_edu=mid,above_185pct,12
+income,ethnicity=Asian_Other & parent_edu=high,below_poverty,1
+income,ethnicity=Asian_Other & parent_edu=high,to_185pct,3
+income,ethnicity=Asian_Other & parent_edu=high,above_185pct,24
+wic_child,income=below_poverty,no,0
+wic_child,income=below_poverty,yes,0
+wic_child,income=to_185pct,no,0
+wic_child,income=to_185pct,yes,0
+wic_child,income=above_185pct,no,0
+wic_child,income=above_185pct,yes,0
+snap_past_year,income=below_poverty,no,0
+snap_past_year,income=below_poverty,yes,0
+snap_past_year,income=to_185pct,no,0
+snap_past_year,income=to_185pct,yes,0
+snap_past_year,income=above_185pct,no,0
+snap_past_year,income=above_185pct,yes,0
+food_security,income=below_poverty & snap_past_year=no & wic_child=no,secure,4
+food_security,income=below_poverty & snap_past_year=no & wic_child=no,insecure,5
+food_security,income=below_poverty & snap_past_year=no & wic_child=yes,secure,13
+food_security,income=below_poverty & snap_past_year=no & wic_child=yes,insecure,5
+food_security,income=below_poverty & snap_past_year=yes & wic_child=no,secure,2
+food_security,income=below_poverty & snap_past_year=yes & wic_child=no,insecure,4
+food_security,income=below_poverty & snap_past_year=yes & wic_child=yes,secure,60
+food_security,income=below_poverty & snap_past_year=yes & wic_child=yes,insecure,43
+food_security,income=to_185pct & snap_past_year=no & wic_child=no,secure,9
+food_security,income=to_185pct & snap_past_year=no & wic_child=no,insecure,4
+food_security,income=to_185pct & snap_past_year=no & wic_child=yes,secure,15
+food_security,income=to_185pct & snap_past_year=no & wic_child=yes,insecure,14
+food_security,income=to_185pct & snap_past_year=yes & wic_child=no,secure,9
+food_security,income=to_185pct & snap_past_year=yes & wic_child=no,insecure,0
+food_security,income=to_185pct & snap_past_year=yes & wic_child=yes,secure,32
+food_security,income=to_185pct & snap_past_year=yes & wic_child=yes,insecure,15
+food_security,income=above_185pct & snap_past_year=no & wic_child=no,secure,151
+food_security,income=above_185pct & snap_past_year=no & wic_child=no,insecure,11
+food_security,income=above_185pct & snap_past_year=no & wic_child=yes,secure,30
+food_security,income=above_185pct & snap_past_year=no & wic_child=yes,insecure,7
+food_security,income=above_185pct & snap_past_year=yes & wic_child=no,secure,11
+food_security,income=above_185pct & snap_past_year=yes & wic_child=no,insecure,0
+food_security,income=above_185pct & snap_past_year=yes & wic_child=yes,secure,21
+food_security,income=above_185pct & snap_past_year=yes & wic_child=yes,insecure,8
+ever_breastfed,parent_edu=low,no,0
+ever_breastfed,parent_edu=low,yes,0
+ever_breastfed,parent_edu=mid,no,0
+ever_breastfed,parent_edu=mid,yes,0
+ever_breastfed,parent_edu=high,no,0
+ever_breastfed,parent_edu=high,yes,0
+milk_before_12m,parent_edu=low,no,0
+milk_before_12m,parent_edu=low,yes,0
+milk_before_12m,parent_edu=mid,no,0
+milk_before_12m,parent_edu=mid,yes,0
+milk_before_12m,parent_edu=high,no,0
+milk_before_12m,parent_edu=high,yes,0
+low_birth_weight,income=below_poverty,no,0
+low_birth_weight,income=below_poverty,yes,0
+low_birth_weight,income=to_185pct,no,0
+low_birth_weight,income=to_185pct,yes,0
+low_birth_weight,income=above_185pct,no,0
+low_birth_weight,income=above_185pct,yes,0
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,no,0
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,no,0
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,no,8
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,no,0
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,no,0
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,no,0
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,no,0
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,no,0
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,no,0
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,no,2
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,no,3
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,no,1
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,no,0
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,no,2
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,no,1
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,no,0
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,no,0
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,no,0
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,no,1
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,no,0
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,no,0
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,no,0
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,no,0
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,no,0
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,no,2
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,no,1
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,no,4
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,no,0
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,yes,1
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,no,0
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,no,0
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,no,1
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,no,0
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,no,0
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,no,1
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,no,4
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,yes,1
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,no,3
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,no,0
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,no,0
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,no,0
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,no,0
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,no,0
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,no,1
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,no,7
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,no,6
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,yes,2
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,no,1
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,no,0
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,no,0
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,no,1
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,yes,1
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,no,0
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,no,0
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,no,0
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,no,1
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,yes,1
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,no,0
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,no,0
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,no,0
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,no,0
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,no,0
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,no,0
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,no,11
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,yes,3
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,no,0
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,no,0
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,no,0
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,no,0
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,no,0
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,no,4
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,no,2
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,no,37
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,yes,1
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,no,18
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,no,1
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,no,0
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,no,1
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,no,0
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,no,3
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,no,1
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,no,10
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,yes,1
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,no,5
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,no,0
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,no,0
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,no,1
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,no,0
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,no,2
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,no,0
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,no,3
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,no,1
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,no,0
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,no,0
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,no,0
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,no,0
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,no,1
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,no,4
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,no,4
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,no,0
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,no,0
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,no,0
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,no,1
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,no,0
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,no,0
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,no,0
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,no,3
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,no,0
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,no,0
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,no,0
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,no,0
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,no,0
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,no,3
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,yes,1
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,no,3
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,yes,1
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,no,10
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,no,1
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,yes,1
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,no,1
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,no,0
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,no,1
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,no,0
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,no,0
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,no,0
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,no,0
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,no,0
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,no,0
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,no,0
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,no,0
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,no,0
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,no,2
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,yes,1
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,no,1
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,no,5
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,no,0
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,no,1
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,yes,1
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,no,1
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,no,1
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,no,0
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,no,0
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,no,0
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,no,5
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,no,3
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,no,0
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,no,0
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,no,1
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,no,0
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,no,6
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,no,0
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,no,3
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,no,4
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,no,1
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,no,0
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,no,1
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,no,1
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,no,0
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,no,0
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,no,1
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,no,2
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=no & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,no,0
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,no,0
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,no,0
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,no,0
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=no & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,no,0
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,no,0
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,no,3
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=no,yes,1
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,no,0
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=yes & low_birth_weight=no & ever_breastfed=yes & milk_before_12m=yes,yes,0
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,no,0
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=no,yes,0
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,no,0
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=no & milk_before_12m=yes,yes,0
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,no,0
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=no,yes,0
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,no,1
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=yes & low_birth_weight=yes & ever_breastfed=yes & milk_before_12m=yes,yes,0

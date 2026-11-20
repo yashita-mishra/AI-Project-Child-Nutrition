@@ -1,0 +1,17 @@
+edge,n_pairs,cramers_v,p_chi2,low_expected_counts,P(child=key state | parent level),supported
+ethnicity -> income,575,0.277,0.0,False,"{'MexAm': 0.344, 'OthHisp': 0.425, 'NHWhite': 0.12, 'NHBlack': 0.489, 'Asian_Other': 0.301}",True
+parent_edu -> income,525,0.403,0.0,False,"{'low': 0.694, 'mid': 0.321, 'high': 0.046}",True
+parent_edu -> ever_breastfed,582,0.206,0.0,False,"{'low': 0.733, 'mid': 0.747, 'high': 0.919}",True
+parent_edu -> milk_before_12m,564,0.0,0.7326,False,"{'low': 0.288, 'mid': 0.291, 'high': 0.322}",False
+income -> low_birth_weight,573,0.049,0.1846,False,"{'below_poverty': 0.119, 'to_185pct': 0.08, 'above_185pct': 0.069}",False
+income -> snap_past_year,573,0.55,0.0,False,"{'below_poverty': 0.792, 'to_185pct': 0.597, 'above_185pct': 0.176}",True
+income -> wic_child,474,0.572,0.0,False,"{'below_poverty': 0.89, 'to_185pct': 0.778, 'above_185pct': 0.276}",True
+income -> food_security,575,0.323,0.0,False,"{'below_poverty': 0.403, 'to_185pct': 0.341, 'above_185pct': 0.1}",True
+snap_past_year -> food_security,605,0.187,0.0,False,"{'no': 0.166, 'yes': 0.33}",True
+wic_child -> food_security,498,0.257,0.0,False,"{'no': 0.12, 'yes': 0.348}",True
+ethnicity -> anaemia,340,0.212,0.0007,True,"{'MexAm': 0.026, 'OthHisp': 0.155, 'NHWhite': 0.029, 'NHBlack': 0.155, 'Asian_Other': 0.022}",True
+food_security -> anaemia,317,0.128,0.0259,False,"{'secure': 0.046, 'insecure': 0.127}",True
+wic_child -> anaemia,263,0.112,0.0675,False,"{'no': 0.035, 'yes': 0.101}",False
+low_birth_weight -> anaemia,338,0.0,0.8691,True,"{'no': 0.069, 'yes': 0.094}",False
+ever_breastfed -> anaemia,338,0.0,0.9961,True,"{'no': 0.076, 'yes': 0.066}",False
+milk_before_12m -> anaemia,330,0.0,0.4786,False,"{'no': 0.064, 'yes': 0.094}",False
