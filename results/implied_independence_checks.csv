@@ -1,0 +1,15 @@
+a,b,given,n,chi2,dof,p
+ethnicity,snap_past_year,"anaemia, food_security, income, parent_edu, wic_child",149,39.324219563858605,24,0.025243895370553403
+parent_edu,wic_child,"ethnicity, income",420,78.21884801505028,25,2.1641720313231996e-07
+parent_edu,snap_past_year,"ethnicity, income",524,82.63495637516313,27,1.4966640036960564e-07
+parent_edu,food_security,"ethnicity, income",525,47.03210981729031,27,0.009826849719701698
+parent_edu,anaemia,"ethnicity, income",187,9.404583881292401,9,0.40079602167524775
+income,anaemia,"ethnicity, food_security, parent_edu, snap_past_year, wic_child",59,0.7150617283950618,3,0.8696556903953373
+wic_child,parent_edu,"anaemia, ethnicity, food_security, income, snap_past_year",65,4.881230177847365,1,0.027150262588195244
+snap_past_year,ethnicity,"food_security, income, wic_child",443,76.15384357418463,32,1.8349199730518366e-05
+snap_past_year,parent_edu,"food_security, income, wic_child",410,40.057966402312616,16,0.0007635603706077314
+snap_past_year,anaemia,"food_security, income, wic_child",197,3.836003049283504,5,0.5732609542067746
+food_security,parent_edu,"anaemia, ethnicity, income, snap_past_year, wic_child",76,0.8807821859613572,2,0.6437845922070171
+anaemia,parent_edu,"ethnicity, food_security, wic_child",145,7.698307703648262,11,0.7400469280519189
+anaemia,income,"ethnicity, food_security, wic_child",166,8.336523557088075,13,0.8210063720350618
+anaemia,snap_past_year,"ethnicity, food_security, wic_child",171,3.7701034060220593,7,0.8058435278989132

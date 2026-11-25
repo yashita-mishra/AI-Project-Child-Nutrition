@@ -1,0 +1,130 @@
+node,parent_config,state,P_EM
+ethnicity,(none),MexAm,0.1235
+ethnicity,(none),OthHisp,0.15362
+ethnicity,(none),NHWhite,0.41413
+ethnicity,(none),NHBlack,0.15814
+ethnicity,(none),Asian_Other,0.15061
+parent_edu,(none),low,0.12916
+parent_edu,(none),mid,0.51015
+parent_edu,(none),high,0.36069
+income,ethnicity=MexAm & parent_edu=low,below_poverty,0.37463
+income,ethnicity=MexAm & parent_edu=low,to_185pct,0.30658
+income,ethnicity=MexAm & parent_edu=low,above_185pct,0.31879
+income,ethnicity=MexAm & parent_edu=mid,below_poverty,0.30518
+income,ethnicity=MexAm & parent_edu=mid,to_185pct,0.28373
+income,ethnicity=MexAm & parent_edu=mid,above_185pct,0.41109
+income,ethnicity=MexAm & parent_edu=high,below_poverty,0.30604
+income,ethnicity=MexAm & parent_edu=high,to_185pct,0.23049
+income,ethnicity=MexAm & parent_edu=high,above_185pct,0.46348
+income,ethnicity=OthHisp & parent_edu=low,below_poverty,0.43282
+income,ethnicity=OthHisp & parent_edu=low,to_185pct,0.23918
+income,ethnicity=OthHisp & parent_edu=low,above_185pct,0.328
+income,ethnicity=OthHisp & parent_edu=mid,below_poverty,0.39602
+income,ethnicity=OthHisp & parent_edu=mid,to_185pct,0.2442
+income,ethnicity=OthHisp & parent_edu=mid,above_185pct,0.35978
+income,ethnicity=OthHisp & parent_edu=high,below_poverty,0.26456
+income,ethnicity=OthHisp & parent_edu=high,to_185pct,0.15499
+income,ethnicity=OthHisp & parent_edu=high,above_185pct,0.58045
+income,ethnicity=NHWhite & parent_edu=low,below_poverty,0.4492
+income,ethnicity=NHWhite & parent_edu=low,to_185pct,0.2498
+income,ethnicity=NHWhite & parent_edu=low,above_185pct,0.301
+income,ethnicity=NHWhite & parent_edu=mid,below_poverty,0.20865
+income,ethnicity=NHWhite & parent_edu=mid,to_185pct,0.25678
+income,ethnicity=NHWhite & parent_edu=mid,above_185pct,0.53457
+income,ethnicity=NHWhite & parent_edu=high,below_poverty,0.0411
+income,ethnicity=NHWhite & parent_edu=high,to_185pct,0.10287
+income,ethnicity=NHWhite & parent_edu=high,above_185pct,0.85603
+income,ethnicity=NHBlack & parent_edu=low,below_poverty,0.54542
+income,ethnicity=NHBlack & parent_edu=low,to_185pct,0.15123
+income,ethnicity=NHBlack & parent_edu=low,above_185pct,0.30335
+income,ethnicity=NHBlack & parent_edu=mid,below_poverty,0.41626
+income,ethnicity=NHBlack & parent_edu=mid,to_185pct,0.34084
+income,ethnicity=NHBlack & parent_edu=mid,above_185pct,0.2429
+income,ethnicity=NHBlack & parent_edu=high,below_poverty,0.2647
+income,ethnicity=NHBlack & parent_edu=high,to_185pct,0.22368
+income,ethnicity=NHBlack & parent_edu=high,above_185pct,0.51162
+income,ethnicity=Asian_Other & parent_edu=low,below_poverty,0.43052
+income,ethnicity=Asian_Other & parent_edu=low,to_185pct,0.13791
+income,ethnicity=Asian_Other & parent_edu=low,above_185pct,0.43157
+income,ethnicity=Asian_Other & parent_edu=mid,below_poverty,0.33399
+income,ethnicity=Asian_Other & parent_edu=mid,to_185pct,0.3059
+income,ethnicity=Asian_Other & parent_edu=mid,above_185pct,0.36011
+income,ethnicity=Asian_Other & parent_edu=high,below_poverty,0.12814
+income,ethnicity=Asian_Other & parent_edu=high,to_185pct,0.14698
+income,ethnicity=Asian_Other & parent_edu=high,above_185pct,0.72488
+wic_child,income=below_poverty,no,0.14633
+wic_child,income=below_poverty,yes,0.85367
+wic_child,income=to_185pct,no,0.24682
+wic_child,income=to_185pct,yes,0.75318
+wic_child,income=above_185pct,no,0.70462
+wic_child,income=above_185pct,yes,0.29538
+snap_past_year,income=below_poverty,no,0.24739
+snap_past_year,income=below_poverty,yes,0.75261
+snap_past_year,income=to_185pct,no,0.42793
+snap_past_year,income=to_185pct,yes,0.57207
+snap_past_year,income=above_185pct,no,0.80504
+snap_past_year,income=above_185pct,yes,0.19496
+food_security,income=below_poverty & wic_child=no & snap_past_year=no,secure,0.6645
+food_security,income=below_poverty & wic_child=no & snap_past_year=no,insecure,0.3355
+food_security,income=below_poverty & wic_child=no & snap_past_year=yes,secure,0.65562
+food_security,income=below_poverty & wic_child=no & snap_past_year=yes,insecure,0.34438
+food_security,income=below_poverty & wic_child=yes & snap_past_year=no,secure,0.7508
+food_security,income=below_poverty & wic_child=yes & snap_past_year=no,insecure,0.2492
+food_security,income=below_poverty & wic_child=yes & snap_past_year=yes,secure,0.62118
+food_security,income=below_poverty & wic_child=yes & snap_past_year=yes,insecure,0.37882
+food_security,income=to_185pct & wic_child=no & snap_past_year=no,secure,0.73416
+food_security,income=to_185pct & wic_child=no & snap_past_year=no,insecure,0.26584
+food_security,income=to_185pct & wic_child=no & snap_past_year=yes,secure,0.82327
+food_security,income=to_185pct & wic_child=no & snap_past_year=yes,insecure,0.17673
+food_security,income=to_185pct & wic_child=yes & snap_past_year=no,secure,0.61919
+food_security,income=to_185pct & wic_child=yes & snap_past_year=no,insecure,0.38081
+food_security,income=to_185pct & wic_child=yes & snap_past_year=yes,secure,0.68424
+food_security,income=to_185pct & wic_child=yes & snap_past_year=yes,insecure,0.31576
+food_security,income=above_185pct & wic_child=no & snap_past_year=no,secure,0.91852
+food_security,income=above_185pct & wic_child=no & snap_past_year=no,insecure,0.08148
+food_security,income=above_185pct & wic_child=no & snap_past_year=yes,secure,0.85961
+food_security,income=above_185pct & wic_child=no & snap_past_year=yes,insecure,0.14039
+food_security,income=above_185pct & wic_child=yes & snap_past_year=no,secure,0.80711
+food_security,income=above_185pct & wic_child=yes & snap_past_year=no,insecure,0.19289
+food_security,income=above_185pct & wic_child=yes & snap_past_year=yes,secure,0.74927
+food_security,income=above_185pct & wic_child=yes & snap_past_year=yes,insecure,0.25073
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=no,no,0.95367
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=no,yes,0.04633
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=yes,no,0.95743
+anaemia,ethnicity=MexAm & food_security=secure & wic_child=yes,yes,0.04257
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=no,no,0.93322
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=no,yes,0.06678
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=yes,no,0.92316
+anaemia,ethnicity=MexAm & food_security=insecure & wic_child=yes,yes,0.07684
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=no,no,0.91012
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=no,yes,0.08988
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=yes,no,0.889
+anaemia,ethnicity=OthHisp & food_security=secure & wic_child=yes,yes,0.111
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=no,no,0.89431
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=no,yes,0.10569
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=yes,no,0.88133
+anaemia,ethnicity=OthHisp & food_security=insecure & wic_child=yes,yes,0.11867
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=no,no,0.9625
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=no,yes,0.0375
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=yes,no,0.94925
+anaemia,ethnicity=NHWhite & food_security=secure & wic_child=yes,yes,0.05075
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=no,no,0.94449
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=no,yes,0.05551
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=yes,no,0.95397
+anaemia,ethnicity=NHWhite & food_security=insecure & wic_child=yes,yes,0.04603
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=no,no,0.93803
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=no,yes,0.06197
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=yes,no,0.89798
+anaemia,ethnicity=NHBlack & food_security=secure & wic_child=yes,yes,0.10202
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=no,no,0.91815
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=no,yes,0.08185
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=yes,no,0.84159
+anaemia,ethnicity=NHBlack & food_security=insecure & wic_child=yes,yes,0.15841
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=no,no,0.95877
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=no,yes,0.04123
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=yes,no,0.96392
+anaemia,ethnicity=Asian_Other & food_security=secure & wic_child=yes,yes,0.03608
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=no,no,0.9406
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=no,yes,0.0594
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=yes,no,0.91017
+anaemia,ethnicity=Asian_Other & food_security=insecure & wic_child=yes,yes,0.08983

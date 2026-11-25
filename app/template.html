@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Child Nutrition Predictor</title>
+<style>
+__FONTS__
+:root{
+  --bg:#f5ead8;--surface:#ebddc5;--text:#201e1d;
+  --accent:#c67139;--accent-600:#b2622d;--accent-100:#fff2eb;--accent-700:#8c491a;--accent-800:#643312;
+  --sage-100:#f0fae1;--sage-200:#e1eecc;--sage-400:#aebf92;--sage-500:#8fa073;--sage-800:#3d472b;
+  --n-100:#f9f4ed;--n-200:#eee7db;--n-300:#dcd3c4;--n-400:#c0b6a5;--n-700:#645c50;
+  --heading:"Caprasimo",system-ui,sans-serif;--body:"Figtree",system-ui,sans-serif;
+  --shadow-md:0 3px 10px rgba(46,43,37,.16);--shadow-lg:0 12px 32px rgba(46,43,37,.22);
+  --ease:cubic-bezier(.65,0,.35,1);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:15px;line-height:1.5}
+.kicker{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--accent-700)}
+.muted{color:var(--n-700)}
+button{font-family:inherit}
+header{display:flex;align-items:center;gap:20px;padding:20px 40px 8px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--heading);font-size:21px}
+.brand i{width:30px;height:30px;border-radius:50%;background:var(--accent);box-shadow:inset -8px -6px 0 var(--accent-600)}
+nav{margin-left:auto;display:flex;gap:6px}
+nav button{all:unset;cursor:pointer;padding:7px 16px;border-radius:999px;font-size:14px;color:var(--n-700)}
+nav button.on{background:var(--surface);color:var(--text);font-weight:700}
+nav button:focus-visible,.chip:focus-visible,.btn:focus-visible,.sc:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.tab{display:none;padding:8px 40px 40px;max-width:1360px;margin:0 auto}.tab.on{display:block}
+.grid3{display:grid;grid-template-columns:320px minmax(420px,1fr) 320px;gap:28px;align-items:start}
+@media(max-width:1100px){.grid3{grid-template-columns:1fr}}
+.card{background:var(--surface);border-radius:28px;padding:22px;display:flex;flex-direction:column;gap:12px;margin-bottom:18px}
+.card h3{margin:0;font-family:var(--heading);font-weight:400;font-size:19px}
+.var{display:flex;flex-direction:column;gap:5px}
+.var label{font-size:13px;font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:5px}
+.chip{all:unset;cursor:pointer;font-size:12.5px;padding:4px 11px;border-radius:999px;background:var(--n-200);color:var(--n-700);transition:background .2s}
+.chip:hover{background:var(--n-300)}
+.chip.on{background:var(--sage-200);color:var(--sage-800);font-weight:700}
+.chip.unk.on{background:var(--n-300);color:var(--text)}
+.chip.do.on{background:var(--accent);color:var(--bg)}
+.center{display:flex;flex-direction:column;align-items:center;gap:12px}
+.center h1{font-family:var(--heading);font-weight:400;font-size:34px;line-height:1.1;margin:4px 0 0;text-align:center}
+.plate{position:relative;width:min(440px,100%);aspect-ratio:1;border-radius:50%;background:var(--n-100);
+  box-shadow:var(--shadow-lg),inset 0 0 0 14px var(--n-200),inset 0 0 0 15px var(--n-300)}
+.plate svg{position:absolute;inset:9%;width:82%;height:82%;transform:rotate(-90deg)}
+.plate circle{fill:none;stroke-width:50;transition:stroke-dasharray .9s var(--ease),stroke-dashoffset .9s var(--ease)}
+.plate .mid{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none}
+.plate .mid .hole{background:var(--n-100);border-radius:50%;width:56%;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:var(--shadow-md)}
+.big{font-family:var(--heading);font-size:54px;line-height:1}
+.pill{display:inline-block;padding:3px 11px;border-radius:999px;font-size:12px;background:var(--n-200)}
+.pill.a{background:var(--accent-100);color:var(--accent-800)}.pill.s{background:var(--sage-100);color:var(--sage-800)}
+.bar-row{display:flex;justify-content:space-between;font-size:13px;margin-bottom:5px;gap:10px}
+.track{position:relative;height:10px;border-radius:999px;background:var(--n-300);overflow:visible}
+.fill{height:100%;border-radius:999px;transition:width .9s var(--ease)}
+.ci{position:absolute;top:-3px;height:16px;border-left:2px solid var(--text);border-right:2px solid var(--text);opacity:.55;transition:left .9s var(--ease),width .9s var(--ease)}
+.ci::after{content:"";position:absolute;left:0;right:0;top:7px;border-top:2px solid var(--text)}
+.btn{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border-radius:999px;background:var(--accent);color:var(--bg);font-family:var(--heading);font-size:14px}
+.btn:hover{background:var(--accent-600)}
+.btn.ghost{background:var(--n-200);color:var(--text)}
+.note{font-size:12.5px;color:var(--n-700);line-height:1.45}
+.warn{background:var(--accent-100);color:var(--accent-800);border-radius:18px;padding:10px 14px;font-size:13px}
+.sc{all:unset;cursor:pointer;display:block;background:var(--surface);border-radius:24px;padding:18px 20px;box-shadow:var(--shadow-md)}
+.sc:hover{background:#e6d6bb}
+.sc h4{margin:0 0 6px;font-family:var(--heading);font-weight:400;font-size:17px}
+.scgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:18px}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{text-align:left;padding:6px 10px;border-bottom:1px solid var(--n-300)}
+th{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-700)}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:900px){.two{grid-template-columns:1fr}}
+.delta{font-weight:700}.delta.up{color:var(--accent-700)}.delta.dn{color:var(--sage-800)}
+select{font-family:inherit;font-size:13px;padding:4px 8px;border-radius:999px;border:1px solid var(--n-300);background:var(--n-100)}
+a{color:var(--accent-700)}
+</style></head>
+<body>
+<header>
+  <div class="brand"><i></i>Child Nutrition Predictor</div>
+  <span class="pill s" id="datapill"></span>
+  <nav id="nav">
+    <button data-t="parents" class="on">For parents</button>
+    <button data-t="predict">Explore the model</button>
+    <button data-t="scen">Scenarios</button>
+    <button data-t="valid">Evidence &amp; validation</button>
+  </nav>
+</header>
+
+<section class="tab on" id="t-parents">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="kicker" style="margin-top:8px">For parents of children aged 2–6</div>
+    <h2 style="font-family:var(--heading);font-weight:400;font-size:34px;margin:4px 0 6px">Help your child get enough iron</h2>
+    <div class="note" style="font-size:14px;max-width:720px">Iron is the nutrient young children most often fall short on, and low iron can lead to anaemia. Tell us a little about your household and we will show how your situation compares with other children, plus foods that help. This is general guidance, not a diagnosis.</div>
+    <div class="two" style="margin-top:18px;align-items:start">
+      <div class="card"><div class="kicker">About your household</div><div id="pq" style="display:flex;flex-direction:column;gap:12px"></div>
+        <div class="note">Every question is optional. Nothing leaves your device.</div></div>
+      <div>
+        <div class="card" id="pres"></div>
+        <div class="card" id="pfood"></div>
+      </div>
+    </div>
+    <div class="card"><div class="kicker">How the comparison works</div><div class="note">The comparison comes from a statistical model fitted on 664 US children in NHANES 2021–2023 (340 with a blood test). It looks at household circumstances, not at what your child eats, so it cannot tell you whether your child is low in iron. Only a blood test can do that: ask your child's doctor if you are worried, or if your child seems unusually tired, pale or irritable.</div></div>
+    <div class="note" id="psrc" style="padding:0 6px"></div>
+  </div>
+</section>
+
+<section class="tab" id="t-predict">
+  <div class="grid3">
+    <div>
+      <div class="card"><div class="kicker">What we know about the child</div><div id="obs" style="display:flex;flex-direction:column;gap:12px"></div>
+        <div class="note">Leave anything you don't know as “Unknown”. The network reasons with whatever is observed.</div></div>
+    </div>
+    <div class="center">
+      <div style="text-align:center"><div class="kicker">Predicted anaemia risk · child aged 2–6</div><h1 id="head">Baseline</h1></div>
+      <div class="plate"><svg viewBox="0 0 100 100" id="pie"></svg>
+        <div class="mid"><div class="hole"><div class="big" id="pct">–</div><div class="note" id="ci" style="margin-top:4px"></div></div></div></div>
+      <div id="vs" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center"></div>
+      <div style="display:flex;gap:10px"><button class="btn ghost" id="reset">Reset</button></div>
+      <div class="warn" style="max-width:440px" id="lowdata"></div>
+    </div>
+    <div>
+      <div class="card"><div class="kicker">What if we change something? &nbsp;<span class="muted" style="text-transform:none;letter-spacing:0;font-weight:400">do()</span></div>
+        <div id="dos" style="display:flex;flex-direction:column;gap:12px"></div>
+        <div class="note">Setting a value overrides what normally causes it, and ignores anything we observed that depends on it. It is not the same as seeing that value in a child.</div></div>
+      <div class="card"><div class="kicker">Before → after</div><div id="ba"></div></div>
+      <div class="card"><div class="kicker">What is moving the number</div><div id="drivers"></div>
+        <div class="note">Change in predicted risk if that one observation were Unknown.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="tab" id="t-scen">
+  <div style="max-width:760px;margin-bottom:16px"><h2 style="font-family:var(--heading);font-weight:400;font-size:30px;margin:6px 0">Ready-made scenarios</h2>
+    <div class="note">Click one to load it on the Predict tab. Intervals are 95% bootstrap intervals over 200 refits of the network.</div></div>
+  <div class="scgrid" id="scs"></div>
+</section>
+
+<section class="tab" id="t-valid">
+  <div style="max-width:820px;margin-bottom:12px"><h2 style="font-family:var(--heading);font-weight:400;font-size:30px;margin:6px 0">How far to trust it</h2>
+    <div class="warn" id="vwarn"></div></div>
+  <div class="two">
+    <div class="card"><h3>Held-out test</h3><div class="note" id="vnote"></div><div id="vscores"></div></div>
+    <div class="card"><h3>Calibration (held-out children, 5 equal bins)</h3><div id="vcal"></div></div>
+  </div>
+  <div class="card"><h3>Masking experiment</h3>
+    <div class="note">Hide a share of the known covariate values, then see how well each method recovers them and whether the network's conclusions change.
+      Pattern: <select id="mpat"><option value="mcar">Random (MCAR)</option><option value="mar">Depends on ethnicity (MAR)</option><option value="mnar">Depends on the value (MNAR)</option></select></div>
+    <div class="two"><div><div class="kicker" style="margin:6px 0">Recovering hidden values (accuracy)</div><div id="mrec"></div></div>
+      <div><div class="kicker" style="margin:6px 0">Error in P(anaemia | parents) and food-security effect</div><div id="mdown"></div></div></div></div>
+</section>
+
+<script id="payload" type="application/json">__PAYLOAD__</script>
+<script>
+const P = JSON.parse(document.getElementById('payload').textContent);
+const M = P.model, NODES = M.nodes, ST = M.states, PA = M.parents;
+const LABEL = {ethnicity:'Ethnicity',parent_edu:'Parent education',income:'Household income',wic_child:'Child on WIC',snap_past_year:'Household on SNAP',food_security:'Food security',anaemia:'Anaemia'};
+const SL = {MexAm:'Mexican American',OthHisp:'Other Hispanic',NHWhite:'White',NHBlack:'Black',Asian_Other:'Asian / other',low:'Low',mid:'Mid',high:'High',
+  below_poverty:'Below poverty',to_185pct:'Up to 185%',above_185pct:'Above 185%',no:'No',yes:'Yes',secure:'Secure',insecure:'Insecure'};
+const OBS = NODES.slice(0,6), DO = ['income','wic_child','snap_past_year','food_security'];
+const idx = Object.fromEntries(NODES.map((n,i)=>[n,i])), R = NODES.map(n=>ST[n].length);
+const AN = idx.anaemia;
+
+// ---------- joint grid + parent configuration index of every node
+const NG = R.reduce((a,b)=>a*b,1), grid = new Uint8Array(NG*NODES.length);
+for (let g=0; g<NG; g++){ let r=g; for (let j=NODES.length-1;j>=0;j--){ grid[g*NODES.length+j]=r%R[j]; r=Math.floor(r/R[j]); } }
+const cfg = NODES.map(n=>{ const a=new Int32Array(NG); const ps=PA[n].map(p=>idx[p]);
+  for (let g=0; g<NG; g++){ let c=0; for (const p of ps) c=c*R[p]+grid[g*NODES.length+p]; a[g]=c; } return a; });
+const desc = n => { const out=new Set(), st=[n]; while(st.length){ const x=st.pop(); for (const m of NODES) if (PA[m].includes(x)&&!out.has(m)){out.add(m);st.push(m);} } return out; };
+
+// P(anaemia = yes | evidence, do) for a given set of CPTs
+function risk(cpt, ev, dos){
+  const drop = new Set(); for (const d in dos){ drop.add(d); desc(d).forEach(x=>drop.add(x)); }
+  const e = Object.entries(ev).filter(([n])=>!drop.has(n) && n!=='anaemia').map(([n,s])=>[idx[n],s]);
+  let num=0, den=0;
+  for (let g=0; g<NG; g++){
+    const o=g*NODES.length; let ok=true;
+    for (const [j,s] of e) if (grid[o+j]!==s){ok=false;break;}
+    if(!ok) continue;
+    let w=1;
+    for (let j=0;j<NODES.length && w>0;j++){ const n=NODES[j];
+      if (n in dos){ if (grid[o+j]!==dos[n]) w=0; }
+      else w*=cpt[n][cfg[j][g]][grid[o+j]]; }
+    den+=w; if (grid[o+AN]===1) num+=w;
+  }
+  return num/den;
+}
+const BOOT = P.boot, BASE = M.cpt;
+function riskCI(ev,dos){ const v=risk(BASE,ev,dos); const bs=BOOT.map(c=>risk(c,ev,dos)).sort((a,b)=>a-b);
+  return {v, lo:bs[Math.floor(.025*bs.length)], hi:bs[Math.ceil(.975*bs.length)-1]}; }
+
+// ---------- state
+let ev = {}, dos = {};
+const pc = x => (100*x).toFixed(1)+'%';
+const pp = x => Math.abs(x)<0.0005?'0.0 pts':(x>=0?'+':'')+(100*x).toFixed(1)+' pts';
+
+// ---------- build selectors
+function chipRow(host, node, kind){
+  const row=document.createElement('div'); row.className='var';
+  row.innerHTML=`<label>${LABEL[node]}</label><div class="chips"></div>`; const c=row.querySelector('.chips');
+  const mk=(txt,cls,fn)=>{const b=document.createElement('button');b.className='chip '+cls;b.textContent=txt;b.onclick=fn;b.dataset.k=txt;c.appendChild(b);return b;};
+  mk(kind==='obs'?'Unknown':'Unchanged','unk',()=>{ (kind==='obs'?delete ev[node]:delete dos[node]); render(); });
+  ST[node].forEach((s,i)=>mk(SL[s]||s, kind==='obs'?'':'do',()=>{ if(kind==='obs') ev[node]=i; else dos[node]=i; render(); }));
+  host.appendChild(row); return c;
+}
+const obsHost=document.getElementById('obs'), doHost=document.getElementById('dos');
+const obsRows = Object.fromEntries(OBS.map(n=>[n,chipRow(obsHost,n,'obs')]));
+const doRows = Object.fromEntries(DO.map(n=>[n,chipRow(doHost,n,'do')]));
+function syncChips(){
+  for (const n of OBS){ [...obsRows[n].children].forEach((b,k)=>b.classList.toggle('on', k===0 ? !(n in ev) : ev[n]===k-1)); }
+  for (const n of DO){ [...doRows[n].children].forEach((b,k)=>b.classList.toggle('on', k===0 ? !(n in dos) : dos[n]===k-1)); }
+}
+
+// ---------- plate
+const NS='http://www.w3.org/2000/svg', C=2*Math.PI*25, pie=document.getElementById('pie');
+const slices=['#8fa073','#c67139'].map(col=>{const c=document.createElementNS(NS,'circle');c.setAttribute('cx',50);c.setAttribute('cy',50);c.setAttribute('r',25);c.style.stroke=col;c.style.strokeDasharray=`0 ${C}`;pie.appendChild(c);return c;});
+function drawPie(p){ const a=Math.max(p,0.012)*C; slices[0].style.strokeDasharray=`${C-a} ${C}`; slices[1].style.strokeDasharray=`${a} ${C}`; slices[1].style.strokeDashoffset=`${-(C-a)}`; }
+
+const PREV = risk(BASE,{},{});
+function render(){
+  syncChips();
+  const r = riskCI(ev,dos), prior = riskCI(ev,{});
+  document.getElementById('pct').textContent = pc(r.v);
+  document.getElementById('ci').textContent = `95% interval ${pc(r.lo)} – ${pc(r.hi)}`;
+  drawPie(r.v);
+  const nEv=Object.keys(ev).length, nDo=Object.keys(dos).length;
+  document.getElementById('head').textContent = nDo? 'If we intervene' : nEv? 'Given what we know' : 'Population baseline';
+  const rel = r.v/PREV;
+  document.getElementById('vs').innerHTML = `<span class="pill ${rel>1.15?'a':'s'}">${rel.toFixed(2)}× the all-children baseline (${pc(PREV)})</span><span class="pill">${nEv} observed · ${nDo} intervention${nDo===1?'':'s'}</span>`;
+  // before / after
+  const rows=[['Without intervention',prior],['With intervention',r]];
+  document.getElementById('ba').innerHTML = rows.map(([t,x])=>`<div style="margin-bottom:14px"><div class="bar-row"><b style="font-weight:600">${t}</b><span class="muted">${pc(x.v)}</span></div><div class="track"><div class="fill" style="width:${Math.min(100,x.v*100*4)}%;background:${t.startsWith('With')?'var(--accent)':'var(--sage-500)'}"></div><div class="ci" style="left:${Math.min(100,x.lo*400)}%;width:${Math.max(0,Math.min(100,x.hi*400)-Math.min(100,x.lo*400))}%"></div></div></div>`).join('')
+    + (nDo? `<div class="note">Estimated change: <span class="delta ${r.v>prior.v?'up':'dn'}">${pp(r.v-prior.v)}</span></div>` : '<div class="note">Pick an intervention above to see the change. Bars run 0–25%.</div>');
+  // drivers
+  const keys=Object.keys(ev); const dr = keys.map(n=>{ const e2={...ev}; delete e2[n]; return [n, r.v - risk(BASE,e2,dos)]; }).sort((a,b)=>Math.abs(b[1])-Math.abs(a[1]));
+  document.getElementById('drivers').innerHTML = dr.length? dr.map(([n,d])=>`<div class="bar-row"><span>${LABEL[n]}: <b>${SL[ST[n][ev[n]]]||ST[n][ev[n]]}</b></span><span class="delta ${d>0?'up':'dn'}">${pp(d)}</span></div>`).join('') : '<div class="note">Nothing observed yet.</div>';
+  document.getElementById('lowdata').textContent = `Built from ${P.validation.n_labelled} children with a blood test, ${P.validation.n_positive} of them anaemic. Differences of a few points are within noise; read the interval, not the point.`;
+}
+document.getElementById('reset').onclick=()=>{ev={};dos={};render();};
+
+// ---------- scenarios
+const SCEN = {
+  wic_low_vs_high:{ev:{income:0,wic_child:1},dos:{}},
+  secure_food:{ev:{income:0,food_security:1},dos:{food_security:0}},
+  enrol_wic:{ev:{income:0,wic_child:0},dos:{wic_child:1}},
+  enrol_snap:{ev:{income:0,snap_past_year:0},dos:{snap_past_year:1}},
+  high_need:{ev:{ethnicity:3,income:0,parent_edu:0,wic_child:0,snap_past_year:0,food_security:1},dos:{wic_child:1,snap_past_year:1}},
+  revision:{ev:{ethnicity:1,income:0,food_security:1,wic_child:1},dos:{}}
+};
+const NOTES = {
+  enrol_wic:'Caution: the model has no variable for how needy a family is, so “WIC” partly stands in for hardship. Do not read a rise here as WIC harming children.',
+  enrol_snap:'Same caution as WIC: participation is selected by need.',
+  high_need:'Same caution: WIC and SNAP participation are partly markers of need.',
+  secure_food:'The strongest causal arrow in the network, but the interval includes zero.',
+  wic_low_vs_high:'A comparison of two kinds of child, not an intervention.'
+};
+(function(){
+  const by={}; P.scenarios.forEach(r=>(by[r.scenario]??=[]).push(r));
+  const host=document.getElementById('scs');
+  Object.entries(by).forEach(([k,rows])=>{
+    const b=document.createElement('button'); b.className='sc';
+    const f=r=>`${(100*r.risk).toFixed(1)}% <span class="muted">(${(100*r.lo).toFixed(1)}–${(100*r.hi).toFixed(1)})</span>`;
+    const body=rows.map(r=>r.arm.startsWith('Change')?`<tr><td><b>Change</b></td><td class="n delta ${r.risk>0?'up':'dn'}">${r.risk>0?'+':''}${r.risk.toFixed(1)} pts <span class="muted">(${r.lo.toFixed(1)} to ${r.hi.toFixed(1)})</span></td></tr>`:`<tr><td>${r.arm}</td><td class="n">${f(r)}</td></tr>`).join('');
+    b.innerHTML=`<h4>${rows[0].title}</h4><table>${body}</table>${NOTES[k]?`<div class="note" style="margin-top:8px">${NOTES[k]}</div>`:''}`;
+    b.onclick=()=>{ const s=SCEN[k]; ev={...s.ev}; dos={...s.dos}; render(); show('predict'); };
+    host.appendChild(b);
+  });
+})();
+
+// ---------- validation
+(function(){
+  const V=P.validation, NAME={bn_em:'Network + EM',bn_deletion:'Network, complete rows only',logistic:'Logistic regression',prevalence:'Prevalence only'};
+  document.getElementById('vnote').textContent=`Repeated 5-fold cross-validation over ${V.n_labelled} children with a blood test; the held-out child's anaemia status was hidden.`;
+  document.getElementById('vscores').innerHTML=`<table><tr><th>Method</th><th class="n">AUC</th><th class="n">Log loss</th><th class="n">Brier skill</th></tr>${V.scores.map(s=>`<tr><td>${NAME[s.method]}</td><td class="n">${s.auc.toFixed(2)} ± ${s.auc_sd.toFixed(2)}</td><td class="n">${s.logloss.toFixed(3)}</td><td class="n">${(100*s.brier_skill).toFixed(1)}%</td></tr>`).join('')}</table>`;
+  document.getElementById('vcal').innerHTML=`<table><tr><th>Predicted</th><th class="n">Observed</th><th class="n">Children</th><th class="n">Anaemic</th></tr>${V.calibration.map(c=>`<tr><td>${pc(c.mean_predicted)}</td><td class="n">${pc(c.observed_rate)}</td><td class="n">${c.n}</td><td class="n">${c.positives}</td></tr>`).join('')}</table><div class="note">Expected calibration error ${pc(V.ece)}. With ${V.n_positive} positives each bin has only a handful of cases.</div>`;
+  const sc=V.scores.find(s=>s.method==='bn_em'), lg=V.scores.find(s=>s.method==='logistic');
+  document.getElementById('vwarn').textContent=`The network ranks children only weakly (AUC ${sc.auc.toFixed(2)}) and a plain logistic regression using every covariate does better (${lg.auc.toFixed(2)}). The causal structure is the point of this model; treat the risk numbers as rough.`;
+  const draw=()=>{ const pat=document.getElementById('mpat').value, NM={em:'EM (keep gaps)',deletion:'Delete rows',mode:'Fill most common'};
+    const rec=P.masking.recovery.filter(r=>r.pattern===pat), dn=P.masking.downstream.filter(r=>r.pattern===pat);
+    const rates=[...new Set(rec.map(r=>r.rate))], meths=['em','deletion','mode'];
+    document.getElementById('mrec').innerHTML=`<table><tr><th>Hidden</th>${meths.map(m=>`<th class="n">${NM[m]}</th>`).join('')}</tr>${rates.map(t=>`<tr><td>${t*100}%</td>${meths.map(m=>{const r=rec.find(x=>x.rate===t&&x.method===m);return `<td class="n">${(100*r.accuracy).toFixed(0)}%</td>`}).join('')}</tr>`).join('')}</table>`;
+    document.getElementById('mdown').innerHTML=`<table><tr><th>Hidden</th>${meths.map(m=>`<th class="n">${NM[m]}</th>`).join('')}</tr>${rates.map(t=>`<tr><td>${t*100}%</td>${meths.map(m=>{const r=dn.find(x=>x.rate===t&&x.method===m);return `<td class="n">${(100*r.risk_table_mae).toFixed(1)} pts · ${(100*r.fs_effect_mean).toFixed(1)}</td>`}).join('')}</tr>`).join('')}</table><div class="note">Each cell: error in the risk table (pts) · estimated food-security effect (pts; unmasked data gives ${(100*P.masking.reference_fs_effect).toFixed(1)}).</div>`; };
+  document.getElementById('mpat').onchange=draw; draw();
+})();
+
+// ---------- tabs
+function show(t){ document.querySelectorAll('.tab').forEach(e=>e.classList.toggle('on',e.id==='t-'+t)); document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t)); }
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>show(b.dataset.t));
+document.getElementById('datapill').textContent=`NHANES 2021–23 · ${P.validation.n} children`;
+render();
+
+// ---------- parents view
+const PQ = [
+  ['income','Household income compared with the poverty line',[['below_poverty',0],['to_185pct',1],['above_185pct',2]],{below_poverty:'Below',to_185pct:'Up to 1.85×',above_185pct:'Above 1.85×'}],
+  ['wic_child','Is your child enrolled in WIC?',[['no',0],['yes',1]],null],
+  ['snap_past_year','Has your household used SNAP (food stamps) in the past year?',[['no',0],['yes',1]],null],
+  ['food_security','Is there sometimes not enough food at home?',[['secure',0],['insecure',1]],{secure:'No, usually enough',insecure:'Yes, sometimes'}]
+];
+let pv = {}, page = 2;
+const pHost=document.getElementById('pq'), pRows={};
+(function(){
+  const ageRow=document.createElement('div'); ageRow.className='var'; ageRow.innerHTML='<label>Your child\'s age</label><div class="chips"></div>';
+  [2,3,4,5,6].forEach(a=>{const b=document.createElement('button');b.className='chip'+(a===page?' on':'');b.textContent=a+' yrs';b.onclick=()=>{page=a;pRender();};b.dataset.a=a;ageRow.lastChild.appendChild(b);});
+  pHost.appendChild(ageRow); pRows.age=ageRow.lastChild;
+  PQ.forEach(([n,q,opts,lab])=>{ const row=document.createElement('div'); row.className='var'; row.innerHTML=`<label>${q}</label><div class="chips"></div>`; const c=row.lastChild;
+    const mk=(t,cls,fn)=>{const b=document.createElement('button');b.className='chip '+cls;b.textContent=t;b.onclick=fn;c.appendChild(b);};
+    mk('Not sure','unk',()=>{delete pv[n];pRender();});
+    opts.forEach(([s,i])=>mk((lab&&lab[s])||SL[s],'',()=>{pv[n]=i;pRender();}));
+    pHost.appendChild(row); pRows[n]=c; });
+})();
+const FOODS=[['Meat, poultry, fish','beef, lamb, dark chicken or turkey, salmon. Iron from animal foods is absorbed best.'],
+  ['Beans, lentils, tofu','mash or soften for small children.'],
+  ['Iron-fortified cereal and oats','check the label for iron; a quick, cheap win at breakfast.'],
+  ['Eggs, peanut butter (thinned), dark leafy greens','small helpings add up.']];
+function pRender(){
+  [...pRows.age.children].forEach(b=>b.classList.toggle('on',+b.dataset.a===page));
+  PQ.forEach(([n,,opts])=>[...pRows[n].children].forEach((b,k)=>b.classList.toggle('on',k===0?!(n in pv):pv[n]===opts[k-1][1])));
+  const r=riskCI(pv,{}), rel=r.v/PREV, known=Object.keys(pv).length;
+  let band, cls, msg;
+  if(!known){band='Tell us a little first';cls='';msg='Answer any of the questions to see how your situation compares.';}
+  else if(rel>1.25){band='Somewhat higher than average';cls='a';msg='Children in households like yours were more often found to have anaemia. That is a reason to be a bit more deliberate about iron-rich foods, not a sign that your child has it.';}
+  else if(rel<0.85){band='Lower than average';cls='s';msg='Children in households like yours were less often found to have anaemia. Iron-rich foods still matter at this age.';}
+  else {band='About average';cls='s';msg='Children in households like yours had about the same chance as other children of being found with anaemia.';}
+  document.getElementById('pres').innerHTML=`<div class="kicker">How you compare</div><div style="font-family:var(--heading);font-size:28px;line-height:1.15">${band}</div><div>${known?`<span class="pill ${cls}">${pc(r.v)} of similar children</span> <span class="pill">all children: ${pc(PREV)}</span>`:''}</div><div class="note" style="font-size:14px">${msg}</div>${known?`<div class="note">Plausible range for similar children: ${pc(r.lo)} to ${pc(r.hi)}. The range is wide because few children in the data had anaemia.</div>`:''}`;
+  const mg = page<=3?7:10, extra=[];
+  if(pv.food_security===1||pv.income===0) extra.push('<b>Help with food costs:</b> if you are not already enrolled, WIC (for children under 5) and SNAP may be available to you. Ask your local health department or doctor how to apply.');
+  document.getElementById('pfood').innerHTML=`<div class="kicker">What helps</div>
+    <div style="font-size:14px">At ${page} years, children need about <b>${mg} mg of iron a day</b>.</div>
+    ${FOODS.map(f=>`<div style="font-size:14px"><b>${f[0]}:</b> ${f[1]}</div>`).join('')}
+    <div style="font-size:14px"><b>Add vitamin C at the same meal</b> (orange, strawberries, kiwi, tomato, bell pepper, broccoli). It helps the body take up iron from plant foods.</div>
+    <div style="font-size:14px"><b>Don't let milk crowd out food.</b> Cow's milk has almost no iron, and more than about 24 oz (710 ml) a day is linked to low iron in young children.</div>
+    <div style="font-size:14px"><b>Cooking in cast iron</b> adds a little iron to food.</div>
+    ${extra.map(e=>`<div style="font-size:14px">${e}</div>`).join('')}
+    <div class="note">Do not give iron supplements unless your child's doctor advises it: too much iron is harmful.</div>`;
+}
+document.getElementById('psrc').innerHTML='Food and amount guidance from <a href="https://kidshealth.org/en/parents/iron.html" target="_blank" rel="noopener">KidsHealth</a>, <a href="https://www.mayoclinic.org/healthy-lifestyle/childrens-health/in-depth/iron-deficiency/art-20045634" target="_blank" rel="noopener">Mayo Clinic</a>, <a href="https://albertahealthservices.ca/assets/info/nutrition/if-nfs-iron-for-babies-and-young-children.pdf" target="_blank" rel="noopener">Alberta Health Services</a> and the <a href="https://caringforkids.cps.ca/handouts/iron_needs_of_babies_and_children" target="_blank" rel="noopener">Canadian Paediatric Society</a>. Daily iron amounts are the US recommended allowances (1–3 years: 7 mg; 4–8 years: 10 mg).';
+pRender();
+</script>
+</body></html>

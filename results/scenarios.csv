@@ -1,0 +1,21 @@
+scenario,title,arm,risk,lo,hi
+wic_low_vs_high,Low-income on WIC vs higher-income without WIC,"Low income, on WIC",0.07996908420020024,0.04389881747133315,0.11891680639890793
+wic_low_vs_high,Low-income on WIC vs higher-income without WIC,"Higher income, no WIC",0.05023244420135125,0.02483746731550996,0.07512327968747938
+wic_low_vs_high,Low-income on WIC vs higher-income without WIC,Change (percentage points),-2.973663999884899,-5.605284706925424,-0.22962881272224986
+secure_food,Food-insecure child: make the household food secure,Now (insecure),0.09360115049827405,0.04880783743342169,0.13849331632736298
+secure_food,Food-insecure child: make the household food secure,After do(food secure),0.06867728460547907,0.04120534614276982,0.10179911201438725
+secure_food,Food-insecure child: make the household food secure,Change (percentage points),-2.492386589279498,-6.532313811016967,0.6761370343143964
+enrol_wic,Below-poverty child not on WIC: enrol in WIC,Now (no WIC),0.061689690874578734,0.035966788595613614,0.08667650051732805
+enrol_wic,Below-poverty child not on WIC: enrol in WIC,After do(WIC),0.07996908420020027,0.043898817471333146,0.11891680639890792
+enrol_wic,Below-poverty child not on WIC: enrol in WIC,Change (percentage points),1.8279393325621536,-0.31636657179598054,3.7892561501636286
+enrol_snap,Below-poverty child not on SNAP: enrol in SNAP,Now (no SNAP),0.0751106907990215,0.04306580406629021,0.11012982546537543
+enrol_snap,Below-poverty child not on SNAP: enrol in SNAP,After do(SNAP),0.07801202504903318,0.04381664306860475,0.11447297747354122
+enrol_snap,Below-poverty child not on SNAP: enrol in SNAP,Change (percentage points),0.29013342500116834,-0.10439338416702053,0.9874481276030751
+high_need,Highest-need profile: WIC and SNAP together,Now,0.08184517462954334,0.04918770470122606,0.11723801876208263
+high_need,Highest-need profile: WIC and SNAP together,"After do(WIC, SNAP)",0.12337876180029066,0.06249247429754386,0.19096002214357152
+high_need,Highest-need profile: WIC and SNAP together,Change (percentage points),4.153358717074732,-0.8087438650373177,9.770719154705889
+revision,Probability revision: evidence arriving one item at a time,No evidence,0.06394747174723588,0.037897493459318775,0.09126822851364773
+revision,Probability revision: evidence arriving one item at a time,+ ethnicity: Other Hispanic,0.10465682277206255,0.05820428642363667,0.15324731225568003
+revision,Probability revision: evidence arriving one item at a time,+ income: below poverty,0.11096899233533207,0.05342472351276038,0.17053327816535913
+revision,Probability revision: evidence arriving one item at a time,+ food security: insecure,0.11679104776606113,0.0401106868147568,0.18109951674621091
+revision,Probability revision: evidence arriving one item at a time,+ WIC: yes,0.1186696336529507,0.032345626541092666,0.1921001064109205
