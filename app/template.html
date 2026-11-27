@@ -94,6 +94,33 @@ a{color:var(--accent-700)}
 .dtoggle button{all:unset;cursor:pointer;padding:6px 16px;border-radius:999px;font-size:13px;color:var(--n-700)}
 .dtoggle button.on{background:var(--n-100);color:var(--text);font-weight:700;box-shadow:var(--shadow-sm)}
 .dtoggle button:focus-visible{outline:2px solid var(--accent)}
+#t-parents>div>.two>div>.card,#t-parents>div>.two>.card{border-radius:36px;padding:30px}
+#pres{background:var(--n-100);box-shadow:var(--shadow-md)}
+.prog{display:flex;gap:6px;align-items:center}.prog i{width:34px;height:9px;border-radius:999px;background:var(--n-300);transition:background .4s}.prog i.on{background:var(--sage-500)}
+.dots{display:grid;grid-template-columns:repeat(10,1fr);gap:8px;max-width:340px}
+.dots i{aspect-ratio:1;border-radius:50%;background:var(--n-300);transition:background .5s,box-shadow .5s}
+.dots i.h{background:var(--accent)}.dots i.m{background:#f2d4bf;box-shadow:inset 0 0 0 2px #dc9d73}.dots i.ok{background:var(--sage-400)}
+.lg{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--n-700)}.lg span{display:flex;align-items:center;gap:6px}.lg b{width:12px;height:12px;border-radius:50%;display:inline-block}
+.meter{height:12px;border-radius:999px;background:var(--n-300);overflow:hidden}.meter div{height:100%;border-radius:999px;background:var(--accent);transition:width .7s cubic-bezier(.5,1.3,.5,1),background .4s}
+.ftiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.ft{all:unset;cursor:pointer;display:flex;flex-direction:column;gap:6px;padding:12px 14px;border-radius:22px;background:var(--n-200);box-shadow:inset 0 0 0 2px transparent;transition:background .3s,box-shadow .3s,transform .3s cubic-bezier(.5,1.6,.5,1)}
+.ft:hover{filter:brightness(.97)}.ft:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.ft.on{background:var(--sage-100);box-shadow:inset 0 0 0 2px var(--sage-500);transform:scale(1.02)}
+.ft .top{display:flex;align-items:center;gap:10px}
+.ft .ci2{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--n-100);color:var(--sage-800);flex:none;transition:background .3s}
+.ft.on .ci2{background:var(--sage-500);color:var(--n-100)}.ft.heme .ci2{color:var(--accent-700)}.ft.on.heme .ci2{color:var(--n-100)}
+.ft .ci2 span{width:19px;height:19px;background:currentColor;-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.ft .mg{margin-left:auto;font-family:var(--heading);font-size:19px}.ft .mg small{font-family:var(--body);font-size:11px;color:var(--n-700)}
+.ft .fn{font-weight:700;font-size:13.5px;line-height:1.2}.ft .sv{font-size:11.5px;color:var(--n-700)}
+.ft .tag{align-self:flex-start;font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--n-100);color:var(--n-700)}.ft.heme .tag{background:var(--accent-100);color:var(--accent-800)}
+.tip{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-radius:22px}
+.tip .ci2{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--n-100);flex:none}
+.tip .ci2 span{width:17px;height:17px;background:currentColor;-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.qic{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--sage-100);color:var(--sage-800);flex:none;transition:background .4s,color .4s}
+.qic.done{background:var(--sage-500);color:var(--n-100)}
+.qic span{width:20px;height:20px;background:currentColor;-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+#pq .var{flex-direction:row;gap:14px;align-items:flex-start}#pq .var>div:last-child{display:flex;flex-direction:column;gap:8px}#pq label{font-weight:700;font-size:15px}
+#pq .chip{font-size:13.5px;padding:7px 14px;background:var(--n-100)}#pq .chip.on{background:var(--accent);color:var(--n-100);box-shadow:var(--shadow-sm,0 1px 3px rgba(0,0,0,.15))}#pq .chip.unk.on{background:var(--n-300);color:var(--text);box-shadow:none}
 .dstage{position:relative;width:min(540px,100%);aspect-ratio:1}
 .dring{position:absolute;inset:8%;border-radius:50%;border:2px dashed var(--n-400)}
 .dring-label{position:absolute;left:50%;top:3%;transform:translateX(-50%);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--n-700);background:var(--bg);padding:2px 10px}
@@ -129,6 +156,7 @@ a{color:var(--accent-700)}
     <div class="kicker" style="margin-top:8px">For parents of children aged 2–6</div>
     <h2 style="font-family:var(--heading);font-weight:400;font-size:34px;margin:4px 0 6px">Help your child get enough iron</h2>
     <div class="note" style="font-size:14px;max-width:720px">Iron is the nutrient young children most often fall short on, and low iron can lead to anaemia. Tell us a little about your household and we will show how your situation compares with other children, plus foods that help. Further down, log what your child eats and get swap ideas. This is general guidance, not a diagnosis.</div>
+    <div class="prog" id="pprog" style="margin-top:14px"></div><div class="note" id="pcount" style="margin:4px 0 0"></div>
     <div class="two" style="margin-top:18px;align-items:start">
       <div class="card"><div class="kicker">About your household</div><div id="pq" style="display:flex;flex-direction:column;gap:12px"></div>
         <div class="note">Every question is optional. Nothing leaves your device.</div></div>
@@ -225,6 +253,8 @@ a{color:var(--accent-700)}
 
 <script id="payload" type="application/json">__PAYLOAD__</script>
 <script>
+const ICONS = __ICONS__;
+const IC = n => `url('${ICONS[n]}')`;
 const P = JSON.parse(document.getElementById('payload').textContent);
 const M = P.model, NODES = M.nodes, ST = M.states, PA = M.parents;
 const LABEL = {ethnicity:'Ethnicity',parent_edu:'Parent education',income:'Household income',wic_child:'Child on WIC',snap_past_year:'Household on SNAP',food_security:'Food security',anaemia:'Anaemia'};
@@ -368,10 +398,12 @@ const PQ = [
 let pv = {}, page = 2;
 const pHost=document.getElementById('pq'), pRows={};
 (function(){
-  const ageRow=document.createElement('div'); ageRow.className='var'; ageRow.innerHTML='<label>Your child\'s age</label><div class="chips"></div>';
-  [2,3,4,5,6].forEach(a=>{const b=document.createElement('button');b.className='chip'+(a===page?' on':'');b.textContent=a+' yrs';b.onclick=()=>{page=a;pRender();};b.dataset.a=a;ageRow.lastChild.appendChild(b);});
-  pHost.appendChild(ageRow); pRows.age=ageRow.lastChild;
-  PQ.forEach(([n,q,opts,lab])=>{ const row=document.createElement('div'); row.className='var'; row.innerHTML=`<label>${q}</label><div class="chips"></div>`; const c=row.lastChild;
+  const QIC={age:'baby',income:'wallet',wic_child:'heart-handshake',snap_past_year:'shopping-basket',food_security:'soup'};
+  const icn=n=>`<div class="qic" data-q="${n}"><span style="-webkit-mask-image:${IC(QIC[n])};mask-image:${IC(QIC[n])}"></span></div>`;
+  const ageRow=document.createElement('div'); ageRow.className='var'; ageRow.innerHTML=icn('age')+'<div><label>Your child\'s age</label><div class="chips"></div></div>';
+  [2,3,4,5,6].forEach(a=>{const b=document.createElement('button');b.className='chip'+(a===page?' on':'');b.textContent=a+' yrs';b.onclick=()=>{page=a;pRender();};b.dataset.a=a;ageRow.lastChild.lastChild.appendChild(b);});
+  pHost.appendChild(ageRow); pRows.age=ageRow.lastChild.lastChild;
+  PQ.forEach(([n,q,opts,lab])=>{ const row=document.createElement('div'); row.className='var'; row.innerHTML=icn(n)+`<div><label>${q}</label><div class="chips"></div></div>`; const c=row.lastChild.lastChild;
     const mk=(t,cls,fn)=>{const b=document.createElement('button');b.className='chip '+cls;b.textContent=t;b.onclick=fn;c.appendChild(b);};
     mk('Not sure','unk',()=>{delete pv[n];pRender();});
     opts.forEach(([s,i])=>mk((lab&&lab[s])||SL[s],'',()=>{pv[n]=i;pRender();}));
@@ -381,6 +413,16 @@ const FOODS=[['Meat, poultry, fish','beef, lamb, dark chicken or turkey, salmon.
   ['Beans, lentils, tofu','mash or soften for small children.'],
   ['Iron-fortified cereal and oats','check the label for iron; a quick, cheap win at breakfast.'],
   ['Eggs, peanut butter (thinned), dark leafy greens','small helpings add up.']];
+const IRON=[
+ {n:'Iron-fortified cereal',sv:'½ cup',mg:4.0,icon:'wheat',tag:'Check the label'},
+ {n:'Lentils',sv:'¼ cup, mashed',mg:1.6,icon:'bean',tag:'Pair with vitamin C'},
+ {n:'Tofu',sv:'¼ cup',mg:1.5,icon:'box',tag:'Pair with vitamin C'},
+ {n:'Beans',sv:'¼ cup, softened',mg:1.1,icon:'bean',tag:'Pair with vitamin C'},
+ {n:'Egg',sv:'1 large',mg:0.9,icon:'egg',tag:'Small helpings add up'},
+ {n:'Spinach, cooked',sv:'2 tbsp',mg:0.8,icon:'leaf',tag:'Pair with vitamin C'},
+ {n:'Beef or lamb',sv:'1 oz',mg:0.7,icon:'beef',tag:'Absorbed best',heme:true},
+ {n:'Dark chicken or turkey',sv:'1 oz',mg:0.4,icon:'drumstick',tag:'Absorbed best',heme:true}];
+const ironOn=new Set([0,4]);
 function pRender(){
   [...pRows.age.children].forEach(b=>b.classList.toggle('on',+b.dataset.a===page));
   PQ.forEach(([n,,opts])=>[...pRows[n].children].forEach((b,k)=>b.classList.toggle('on',k===0?!(n in pv):pv[n]===opts[k-1][1])));
@@ -390,24 +432,40 @@ function pRender(){
   else if(rel>1.25){band='Somewhat higher than average';cls='a';msg='Children in households like yours were more often found to have anaemia. That is a reason to be a bit more deliberate about iron-rich foods, not a sign that your child has it.';}
   else if(rel<0.85){band='Lower than average';cls='s';msg='Children in households like yours were less often found to have anaemia. Iron-rich foods still matter at this age.';}
   else {band='About average';cls='s';msg='Children in households like yours had about the same chance as other children of being found with anaemia.';}
-  document.getElementById('pres').innerHTML=`<div class="kicker">How you compare</div><div style="font-family:var(--heading);font-size:28px;line-height:1.15">${band}</div><div>${known?`<span class="pill ${cls}">${pc(r.v)} of similar children</span> <span class="pill">all children: ${pc(PREV)}</span>`:''}</div><div class="note" style="font-size:14px">${msg}</div>${known?`<div class="note">Plausible range for similar children: ${pc(r.lo)} to ${pc(r.hi)}. The range is wide because few children in the data had anaemia.</div>`:''}`;
-  const mg = page<=3?7:10, extra=[];
+  const dotsN=Math.round(r.v*100), lo=Math.round(r.lo*100), hi=Math.round(r.hi*100);
+  document.getElementById('pres').innerHTML=`<div class="kicker">How you compare</div>
+    <div style="font-family:var(--heading);font-size:28px;line-height:1.12">${known?`About ${dotsN} in 100 children like yours were found to have anaemia`:'Tell us a little first'}</div>
+    <div class="dots">${Array.from({length:100},(_,i)=>`<i class="${!known?'':i<dotsN?'h':i<hi?'m':'ok'}" style="transition-delay:${i*4}ms"></i>`).join('')}</div>
+    ${known?`<div class="lg"><span><b style="background:var(--accent)"></b>Anaemic</span><span><b style="background:#f2d4bf;box-shadow:inset 0 0 0 2px #dc9d73"></b>Possibly</span><span><b style="background:var(--sage-400)"></b>Not anaemic</span></div>
+    <div><span class="pill ${cls}">${band}</span> <span class="pill">all children: ${pc(PREV)}</span></div>`:`<div class="note" style="font-size:14px">Answer any question on the left and these 100 children fill in.</div>`}
+    ${known?`<div class="note" style="font-size:14px">${msg}</div><div class="note">The lighter dots show the plausible range. It is wide because few children in the data had anaemia.</div>`:''}`;
+  // progress
+  const ans=1+Object.keys(pv).length; document.getElementById('pprog').innerHTML=[0,1,2,3,4].map(i=>`<i class="${i<ans?'on':''}"></i>`).join('');
+  document.getElementById('pcount').textContent=`${ans} of 5 answered`;
+  document.querySelectorAll('.qic').forEach(q=>{const n=q.dataset.q,d=n==='age'||(n in pv);q.classList.toggle('done',d);const ic=IC(d?'check':({age:'baby',income:'wallet',wic_child:'heart-handshake',snap_past_year:'shopping-basket',food_security:'soup'})[n]);q.firstChild.style.webkitMaskImage=ic;q.firstChild.style.maskImage=ic;});
+  // iron day
+  const target=page<=3?7:10, extra=[];
   if(pv.food_security===1||pv.income===0) extra.push('<b>Help with food costs:</b> if you are not already enrolled, WIC (for children under 5) and SNAP may be available to you. Ask your local health department or doctor how to apply.');
+  const total=IRON.reduce((t,f,i)=>t+(ironOn.has(i)?f.mg:0),0), full=total>=target;
   document.getElementById('pfood').innerHTML=`<div class="kicker">What helps</div>
-    <div style="font-size:14px">At ${page} years, children need about <b>${mg} mg of iron a day</b>.</div>
-    ${FOODS.map(f=>`<div style="font-size:14px"><b>${f[0]}:</b> ${f[1]}</div>`).join('')}
-    <div style="font-size:14px"><b>Add vitamin C at the same meal</b> (orange, strawberries, kiwi, tomato, bell pepper, broccoli). It helps the body take up iron from plant foods.</div>
-    <div style="font-size:14px"><b>Don't let milk crowd out food.</b> Cow's milk has almost no iron, and more than about 24 oz (710 ml) a day is linked to low iron in young children.</div>
-    <div style="font-size:14px"><b>Cooking in cast iron</b> adds a little iron to food.</div>
+    <div style="font-family:var(--heading);font-size:24px;line-height:1.1">Build a day of iron</div>
+    <div class="note" style="font-size:13.5px">At ${page} years, children need about <b>${target} mg of iron a day</b>. Tap the foods your child might eat today. Amounts are approximate, per toddler serving.</div>
+    <div style="display:flex;align-items:baseline;gap:8px"><span style="font-family:var(--heading);font-size:30px;line-height:1">${total.toFixed(1)}</span><span class="note" style="font-size:14px">of ${target} mg today</span><span style="margin-left:auto;font-size:12.5px;font-weight:700;color:${full?'var(--sage-800)':'var(--accent-700)'}">${full?'Full day of iron':(target-total).toFixed(1)+' mg to go'}</span></div>
+    <div class="meter"><div style="width:${Math.min(total/target,1)*100}%;${full?'background:var(--sage-500)':''}"></div></div>
+    <div class="ftiles" id="ftiles"></div>
+    ${[['citrus','Add vitamin C at the same meal','Orange, strawberries, kiwi, tomato, bell pepper or broccoli help the body take up iron from plant foods.','var(--sage-100)','var(--sage-800)'],['milk','Keep milk under about 24 oz a day','Cow\'s milk has almost no iron, and more than about 24 oz (710 ml) a day is linked to low iron in young children.','var(--accent-100)','var(--accent-700)'],['cooking-pot','Cook in cast iron','Cast-iron pans add a little iron to the food.','var(--n-200)','var(--n-700)']].map(t=>`<div class="tip" style="background:${t[3]}"><div class="ci2" style="color:${t[4]}"><span style="-webkit-mask-image:${IC(t[0])};mask-image:${IC(t[0])}"></span></div><div><b style="font-size:14px">${t[1]}</b><div style="font-size:13px;line-height:1.4">${t[2]}</div></div></div>`).join('')}
     ${extra.map(e=>`<div style="font-size:14px">${e}</div>`).join('')}
     <div class="note">Do not give iron supplements unless your child's doctor advises it: too much iron is harmful.</div>`;
+  const ft=document.getElementById('ftiles');
+  IRON.forEach((f,i)=>{const on=ironOn.has(i),b=document.createElement('button');b.className='ft'+(on?' on':'')+(f.heme?' heme':'');b.setAttribute('aria-pressed',on);
+    const ic=IC(on?'check':f.icon);
+    b.innerHTML=`<div class="top"><div class="ci2"><span style="-webkit-mask-image:${ic};mask-image:${ic}"></span></div><div class="mg">${f.mg.toFixed(1)}<small> mg</small></div></div><div><div class="fn">${f.n}</div><div class="sv">${f.sv}</div></div><div class="tag">${f.tag}</div>`;
+    b.onclick=()=>{ironOn.has(i)?ironOn.delete(i):ironOn.add(i);pRender();};ft.appendChild(b);});
 }
 document.getElementById('psrc').innerHTML='Food and amount guidance from <a href="https://kidshealth.org/en/parents/iron.html" target="_blank" rel="noopener">KidsHealth</a>, <a href="https://www.mayoclinic.org/healthy-lifestyle/childrens-health/in-depth/iron-deficiency/art-20045634" target="_blank" rel="noopener">Mayo Clinic</a>, <a href="https://albertahealthservices.ca/assets/info/nutrition/if-nfs-iron-for-babies-and-young-children.pdf" target="_blank" rel="noopener">Alberta Health Services</a> and the <a href="https://caringforkids.cps.ca/handouts/iron_needs_of_babies_and_children" target="_blank" rel="noopener">Canadian Paediatric Society</a>. Daily iron amounts are the US recommended allowances (1–3 years: 7 mg; 4–8 years: 10 mg).';
 pRender();
 
 // ================= Little Plate food diary =================
-const ICONS = __ICONS__;
-const IC = n => `url("${ICONS[n]}")`;
 const GRP = {
   veg:{name:'Veggies',icon:'carrot',color:'#8fa073',ink:'#3d472b',home:150},
   fruit:{name:'Fruit',icon:'apple',color:'#e0915c',ink:'#643312',home:210},
@@ -450,6 +508,12 @@ const FDB=[
  {id:'paneer',n:'Paneer',g:'dairy',iron:0,tags:['dairy']}
 ];
 const FOOD=Object.fromEntries(FDB.map(f=>[f.id,f]));
+// a picture for each food where we have one; otherwise the food group's icon
+const FICON={spinach:'leaf',broccoli:'leaf',peas:'bean',carrot:'carrot',sweetpotato:'carrot',orange:'citrus',kiwi:'citrus',mango:'citrus',strawberry:'apple',melon:'apple',banana:'apple',apple:'apple',pear:'apple',
+ fortcereal:'wheat',fortoats:'wheat',wgtoast:'wheat',roti:'wheat',quinoa:'wheat',brownrice:'wheat',whiterice:'wheat',pasta:'wheat',whitebread:'wheat',crackers:'wheat',idli:'wheat',
+ redmeat:'beef',darkchicken:'drumstick',chickenbreast:'drumstick',fish:'drumstick',egg:'egg',lentils:'bean',beans:'bean',tofu:'box',pbutter:'bean',
+ milk:'milk',soymilk:'milk',yogurt:'milk',cheese:'milk',paneer:'milk'};
+const ficon=f=>FICON[f.id]||GRP[f.g].icon;
 const AVOIDS=[['peanut','Peanuts'],['egg','Eggs'],['dairy','Dairy'],['fish','Fish'],['soy','Soy'],['wheat','Wheat']];
 const DMEALS=['Breakfast','Lunch','Snack','Dinner'];
 const PLAN={Breakfast:['grains','fruit','dairy'],Lunch:['protein','veg','grains'],Snack:['fruit','dairy','grains'],Dinner:['protein','veg','grains']};
@@ -520,11 +584,11 @@ function suggestedPlate(meal){
   const plantIron=picks.some(x=>x.f.plant&&x.f.iron>=1), hasC=picks.some(x=>x.f.c);
   if(plantIron&&!hasC){ const slot=picks.find(x=>x.g==='fruit')||picks.find(x=>x.g==='veg');
     const c=FDB.filter(f=>f.c&&allowed(f)&&(!slot||f.g===slot.g)).sort((a,b)=>score(b)-score(a))[0]; if(slot&&c) slot.f=c; }
-  return picks.map(x=>({g:x.g,label:x.f.n,w:1}));
+  return picks.map(x=>({g:x.g,label:x.f.n,w:1,icon:ficon(x.f)}));
 }
 function loggedPlate(entries){
-  const by={}; entries.forEach(e=>{const f=FOOD[e.food]; (by[f.g]??={names:[],w:0}); by[f.g].names.push(e.label||f.n); by[f.g].w+=(e.qty||1);});
-  return Object.entries(by).sort((a,b)=>b[1].w-a[1].w).map(([g,v])=>({g,label:v.names.slice(0,2).join(', ')+(v.names.length>2?' +'+(v.names.length-2):''),w:v.w}));
+  const by={}; entries.forEach(e=>{const f=FOOD[e.food]; (by[f.g]??={names:[],w:0,icon:ficon(f)}); by[f.g].names.push(e.label||f.n); by[f.g].w+=(e.qty||1);});
+  return Object.entries(by).sort((a,b)=>b[1].w-a[1].w).map(([g,v])=>({g,icon:v.icon,label:v.names.slice(0,2).join(', ')+(v.names.length>2?' +'+(v.names.length-2):''),w:v.w}));
 }
 const toks=GORDER.map(k=>{const g=GRP[k],t=document.createElement('div');t.className='dtok';t.style.borderColor=g.color;
   t.innerHTML=`<span class="icon" style="-webkit-mask-image:${IC(g.icon)};mask-image:${IC(g.icon)}"></span><span class="food"></span><span class="portion"></span><span class="group">${g.name}</span>`;
@@ -538,6 +602,7 @@ function drawPlate(items){
     t.classList.toggle('on',on);
     Object.assign(t.style,{left:(x-sz/2)*k+'px',top:(y-sz/2)*k+'px',width:sz*k+'px',height:sz*k+'px',background:on?G.color:'var(--n-100)',color:on?G.ink:G.color,boxShadow:on?'var(--shadow-md)':'var(--shadow-sm)',zIndex:on?2:1});
     const is=(on?(si===0?36:26):26)*k, ic=t.querySelector('.icon'); ic.style.width=is+'px'; ic.style.height=is+'px';
+    const im=IC(on?placed[si].icon:G.icon); ic.style.webkitMaskImage=im; ic.style.maskImage=im;
     t.querySelector('.food').textContent=on?placed[si].label:''; t.querySelector('.portion').textContent=on?SLOTS[si].p:'';
   });
 }
