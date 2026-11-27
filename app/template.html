@@ -362,7 +362,7 @@ const NOTES = {
 // ---------- tabs
 function show(t){ document.querySelectorAll('.tab').forEach(e=>e.classList.toggle('on',e.id==='t-'+t)); document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t)); }
 document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>show(b.dataset.t));
-document.getElementById('datapill').textContent=`NHANES 2021–23 · ${P.validation.n} children`;
+document.getElementById('datapill').textContent='Built using NHANES (2021–23)';
 render();
 
 // ---------- parents view
