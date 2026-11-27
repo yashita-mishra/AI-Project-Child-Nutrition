@@ -22,3 +22,8 @@ WIC, SNAP, food security → anaemia. Missing data handled with EM; do() simulat
 - WIC/SNAP are markers of need as well as treatments; do(WIC) / do(SNAP) are not clean causal effects.
 - Data reject the missing parent_edu -> WIC/SNAP/food_security arrows (results/implied_independence_checks.csv).
 - do() drops observed evidence on the intervened node and its descendants (approximation, not a full counterfactual).
+
+## Parent food diary
+The "For parents" tab includes a Little Plate food diary: log meals by food (or pick the closest food for anything not listed),
+see the plate by group, get swap ideas from the last 7 days, and set foods to leave out. History is stored only in the
+browser (localStorage). Food iron tiers are rule-of-thumb categories in `app/template.html` (`FDB`), not measured amounts.

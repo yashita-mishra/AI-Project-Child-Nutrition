@@ -75,6 +75,45 @@ td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
 .delta{font-weight:700}.delta.up{color:var(--accent-700)}.delta.dn{color:var(--sage-800)}
 select{font-family:inherit;font-size:13px;padding:4px 8px;border-radius:999px;border:1px solid var(--n-300);background:var(--n-100)}
 a{color:var(--accent-700)}
+.diary{display:grid;grid-template-columns:260px minmax(380px,1fr) 320px;gap:24px;align-items:start;margin-top:14px}
+@media(max-width:1180px){.diary{grid-template-columns:1fr}}
+#t-parents input[type=text],#t-parents input[type=date]{font-family:inherit;font-size:14px;padding:8px 14px;border-radius:999px;border:1px solid var(--n-300);background:var(--n-100);color:var(--text);width:100%}
+#t-parents input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.dmeals{display:flex;flex-direction:column;gap:6px;position:relative}
+.dm{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:flex;align-items:center;gap:12px;padding:9px 14px 9px 10px;border-radius:999px;transition:background .3s,box-shadow .3s}
+.dm:hover{background:rgba(32,30,29,.05)}.dm:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.dm .dot{width:16px;height:16px;border-radius:50%;flex:none;background:var(--n-300);border:3px solid var(--surface)}
+.dm.has .dot{background:var(--sage-500)}
+.dm.on{background:var(--n-100);box-shadow:var(--shadow-md)}.dm.on .dot{background:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+.dm b{display:block;font-size:14px}.dm small{font-size:12px;color:var(--n-700)}
+.chip.cat.on{background:var(--accent);color:var(--bg)}
+.dcustom{background:var(--accent-100);color:var(--accent-800);border-radius:18px;padding:8px 12px;font-size:13px}
+.dcustom button{all:unset;cursor:pointer;text-decoration:underline;margin-left:6px}
+.dent{display:flex;align-items:center;gap:8px;padding:6px 6px 6px 12px;border-radius:999px;background:var(--n-100);font-size:13px;margin-bottom:6px}
+.dent .nm{flex:1;min-width:0}.dent .nm small{display:block;color:var(--n-700);font-size:11px}
+.dent button{all:unset;cursor:pointer;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--n-200);font-weight:700}
+.dent button:hover{background:var(--n-300)}.dent button:focus-visible{outline:2px solid var(--accent)}
+.dtoggle{display:flex;gap:4px;background:var(--surface);padding:4px;border-radius:999px}
+.dtoggle button{all:unset;cursor:pointer;padding:6px 16px;border-radius:999px;font-size:13px;color:var(--n-700)}
+.dtoggle button.on{background:var(--n-100);color:var(--text);font-weight:700;box-shadow:var(--shadow-sm)}
+.dtoggle button:focus-visible{outline:2px solid var(--accent)}
+.dstage{position:relative;width:min(540px,100%);aspect-ratio:1}
+.dring{position:absolute;inset:8%;border-radius:50%;border:2px dashed var(--n-400)}
+.dring-label{position:absolute;left:50%;top:3%;transform:translateX(-50%);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--n-700);background:var(--bg);padding:2px 10px}
+.dplate{position:absolute;left:21%;top:21%;width:58%;height:58%;border-radius:50%;background:var(--n-100);box-shadow:var(--shadow-lg),inset 0 0 0 12px var(--n-200)}
+.dtok{position:absolute;border-radius:50%;border:2px solid;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;text-align:center;transition:left .9s cubic-bezier(.5,1.35,.45,1),top .9s cubic-bezier(.5,1.35,.45,1),width .9s cubic-bezier(.5,1.35,.45,1),height .9s cubic-bezier(.5,1.35,.45,1),background .5s,box-shadow .5s}
+.dtok .icon{display:block;background:currentColor;-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;transition:width .5s,height .5s}
+.dtok .food{font-weight:700;font-size:13px;line-height:1.15;padding:0 10px}
+.dtok .portion{font-size:11px;opacity:.75}.dtok .group{font-size:11px;font-weight:600;color:var(--n-700)}
+.dtok:not(.on) .food,.dtok:not(.on) .portion,.dtok.on .group{display:none}
+.sug{background:var(--n-100);border-radius:20px;padding:12px 14px;margin-bottom:10px;font-size:13.5px}
+.sug b{display:block;margin-bottom:2px}
+.sug.hi{border-left:5px solid var(--accent)}.sug.ok{border-left:5px solid var(--sage-500)}
+.swapline{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:6px;font-size:12.5px}
+.swapline .from{padding:3px 10px;border-radius:999px;background:var(--n-200);text-decoration:line-through;color:var(--n-700)}
+.swapline .to{padding:3px 10px;border-radius:999px;background:var(--sage-200);color:var(--sage-800);font-weight:700}
+.wk td,.wk th{padding:5px 6px;font-size:12.5px}
+.hist{font-size:12.5px;padding:4px 0;border-bottom:1px solid var(--n-300)}
 </style></head>
 <body>
 <header>
@@ -92,13 +131,52 @@ a{color:var(--accent-700)}
   <div style="max-width:1100px;margin:0 auto">
     <div class="kicker" style="margin-top:8px">For parents of children aged 2–6</div>
     <h2 style="font-family:var(--heading);font-weight:400;font-size:34px;margin:4px 0 6px">Help your child get enough iron</h2>
-    <div class="note" style="font-size:14px;max-width:720px">Iron is the nutrient young children most often fall short on, and low iron can lead to anaemia. Tell us a little about your household and we will show how your situation compares with other children, plus foods that help. This is general guidance, not a diagnosis.</div>
+    <div class="note" style="font-size:14px;max-width:720px">Iron is the nutrient young children most often fall short on, and low iron can lead to anaemia. Tell us a little about your household and we will show how your situation compares with other children, plus foods that help. Further down, log what your child eats and get swap ideas. This is general guidance, not a diagnosis.</div>
     <div class="two" style="margin-top:18px;align-items:start">
       <div class="card"><div class="kicker">About your household</div><div id="pq" style="display:flex;flex-direction:column;gap:12px"></div>
         <div class="note">Every question is optional. Nothing leaves your device.</div></div>
       <div>
         <div class="card" id="pres"></div>
         <div class="card" id="pfood"></div>
+      </div>
+    </div>
+    <div class="kicker" style="margin-top:26px">Little Plate · food diary</div>
+    <h2 style="font-family:var(--heading);font-weight:400;font-size:30px;margin:4px 0 6px">The plate follows the day</h2>
+    <div class="note" style="font-size:14px;max-width:760px">Log what your child eats, pick the closest match if a food isn't listed, and we will spot gaps from the last 7 days and suggest swaps. Everything is saved only in this browser.</div>
+    <div class="diary" id="diary">
+      <div>
+        <div class="card">
+          <div class="kicker">Day and meal</div>
+          <input type="date" id="dDate" aria-label="Date">
+          <nav class="dmeals" id="dMeals"></nav>
+        </div>
+        <div class="card">
+          <div class="kicker">Add a food</div>
+          <input type="text" id="dSearch" placeholder="Type a food, e.g. lentils or dosa" autocomplete="off" aria-label="Search or type a food">
+          <div id="dCustom" class="dcustom" hidden></div>
+          <div class="chips" id="dCats"></div>
+          <div class="chips" id="dFoods"></div>
+          <div class="note">Not in the list? Type it, then choose the closest food. It is saved under your name for it, and scored like the one you picked.</div>
+        </div>
+        <div class="card">
+          <div class="kicker">This meal</div>
+          <div id="dEntries"></div>
+        </div>
+      </div>
+      <div class="center">
+        <div class="dtoggle" role="group" aria-label="Plate view">
+          <button id="vLogged" class="on">What was eaten</button><button id="vSuggest">Suggested plate</button>
+        </div>
+        <div id="dCaption" class="note" style="text-align:center;max-width:460px"></div>
+        <div class="dstage" id="dStage"><div class="dring"></div><div class="dring-label">Pantry</div><div class="dplate"></div></div>
+      </div>
+      <div>
+        <div class="card"><div class="kicker">Swap ideas from your last 7 days</div><div id="dSuggest"></div></div>
+        <div class="card"><div class="kicker">Last 7 days</div><div id="dWeek"></div>
+          <details style="margin-top:4px"><summary class="note" style="cursor:pointer">Full history</summary><div id="dHistory"></div></details>
+          <button class="btn ghost" id="dClear" style="align-self:flex-start;font-size:13px;padding:6px 14px">Clear history</button></div>
+        <div class="card"><div class="kicker">Foods to leave out</div><div class="chips" id="dAvoid"></div>
+          <div class="note">Suggestions skip these. Always follow your doctor's advice on allergies.</div></div>
       </div>
     </div>
     <div class="card"><div class="kicker">How the comparison works</div><div class="note">The comparison comes from a statistical model fitted on 664 US children in NHANES 2021–2023 (340 with a blood test). It looks at household circumstances, not at what your child eats, so it cannot tell you whether your child is low in iron. Only a blood test can do that: ask your child's doctor if you are worried, or if your child seems unusually tired, pale or irritable.</div></div>
@@ -336,5 +414,196 @@ function pRender(){
 }
 document.getElementById('psrc').innerHTML='Food and amount guidance from <a href="https://kidshealth.org/en/parents/iron.html" target="_blank" rel="noopener">KidsHealth</a>, <a href="https://www.mayoclinic.org/healthy-lifestyle/childrens-health/in-depth/iron-deficiency/art-20045634" target="_blank" rel="noopener">Mayo Clinic</a>, <a href="https://albertahealthservices.ca/assets/info/nutrition/if-nfs-iron-for-babies-and-young-children.pdf" target="_blank" rel="noopener">Alberta Health Services</a> and the <a href="https://caringforkids.cps.ca/handouts/iron_needs_of_babies_and_children" target="_blank" rel="noopener">Canadian Paediatric Society</a>. Daily iron amounts are the US recommended allowances (1–3 years: 7 mg; 4–8 years: 10 mg).';
 pRender();
+
+// ================= Little Plate food diary =================
+const ICONS = {"apple": "data:image/svg+xml;base64,PHN2ZwogIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWFwcGxlIgogIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICB3aWR0aD0iMjQiCiAgaGVpZ2h0PSIyNCIKICB2aWV3Qm94PSIwIDAgMjQgMjQiCiAgZmlsbD0ibm9uZSIKICBzdHJva2U9ImN1cnJlbnRDb2xvciIKICBzdHJva2Utd2lkdGg9IjIiCiAgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIgogIHN0cm9rZS1saW5lam9pbj0icm91bmQiCj4KICA8cGF0aCBkPSJNMTIgMjAuOTRjMS41IDAgMi43NSAxLjA2IDQgMS4wNiAzIDAgNi04IDYtMTIuMjJBNC45MSA0LjkxIDAgMCAwIDE3IDVjLTIuMjIgMC00IDEuNDQtNSAyLTEtLjU2LTIuNzgtMi01LTJhNC45IDQuOSAwIDAgMC01IDQuNzhDMiAxNCA1IDIyIDggMjJjMS4yNSAwIDIuNS0xLjA2IDQtMS4wNloiIC8+CiAgPHBhdGggZD0iTTEwIDJjMSAuNSAyIDIgMiA1IiAvPgo8L3N2Zz4=", "carrot": "data:image/svg+xml;base64,PHN2ZwogIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNhcnJvdCIKICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgd2lkdGg9IjI0IgogIGhlaWdodD0iMjQiCiAgdmlld0JveD0iMCAwIDI0IDI0IgogIGZpbGw9Im5vbmUiCiAgc3Ryb2tlPSJjdXJyZW50Q29sb3IiCiAgc3Ryb2tlLXdpZHRoPSIyIgogIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIKICBzdHJva2UtbGluZWpvaW49InJvdW5kIgo+CiAgPHBhdGggZD0iTTIuMjcgMjEuN3M5Ljg3LTMuNSAxMi43My02LjM2YTQuNSA0LjUgMCAwIDAtNi4zNi02LjM3QzUuNzcgMTEuODQgMi4yNyAyMS43IDIuMjcgMjEuN3pNOC42NCAxNGwtMi4wNS0yLjA0TTE1LjM0IDE1bC0yLjQ2LTIuNDYiIC8+CiAgPHBhdGggZD0iTTIyIDlzLTEuMzMtMi0zLjUtMkMxNi44NiA3IDE1IDkgMTUgOXMxLjMzIDIgMy41IDJTMjIgOSAyMiA5eiIgLz4KICA8cGF0aCBkPSJNMTUgMnMtMiAxLjMzLTIgMy41UzE1IDkgMTUgOXMyLTEuODQgMi0zLjVDMTcgMy4zMyAxNSAyIDE1IDJ6IiAvPgo8L3N2Zz4=", "wheat": "data:image/svg+xml;base64,PHN2ZwogIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXdoZWF0IgogIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICB3aWR0aD0iMjQiCiAgaGVpZ2h0PSIyNCIKICB2aWV3Qm94PSIwIDAgMjQgMjQiCiAgZmlsbD0ibm9uZSIKICBzdHJva2U9ImN1cnJlbnRDb2xvciIKICBzdHJva2Utd2lkdGg9IjIiCiAgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIgogIHN0cm9rZS1saW5lam9pbj0icm91bmQiCj4KICA8cGF0aCBkPSJNMiAyMiAxNiA4IiAvPgogIDxwYXRoIGQ9Ik0zLjQ3IDEyLjUzIDUgMTFsMS41MyAxLjUzYTMuNSAzLjUgMCAwIDEgMCA0Ljk0TDUgMTlsLTEuNTMtMS41M2EzLjUgMy41IDAgMCAxIDAtNC45NFoiIC8+CiAgPHBhdGggZD0iTTcuNDcgOC41MyA5IDdsMS41MyAxLjUzYTMuNSAzLjUgMCAwIDEgMCA0Ljk0TDkgMTVsLTEuNTMtMS41M2EzLjUgMy41IDAgMCAxIDAtNC45NFoiIC8+CiAgPHBhdGggZD0iTTExLjQ3IDQuNTMgMTMgM2wxLjUzIDEuNTNhMy41IDMuNSAwIDAgMSAwIDQuOTRMMTMgMTFsLTEuNTMtMS41M2EzLjUgMy41IDAgMCAxIDAtNC45NFoiIC8+CiAgPHBhdGggZD0iTTIwIDJoMnYyYTQgNCAwIDAgMS00IDRoLTJWNmE0IDQgMCAwIDEgNC00WiIgLz4KICA8cGF0aCBkPSJNMTEuNDcgMTcuNDcgMTMgMTlsLTEuNTMgMS41M2EzLjUgMy41IDAgMCAxLTQuOTQgMEw1IDE5bDEuNTMtMS41M2EzLjUgMy41IDAgMCAxIDQuOTQgMFoiIC8+CiAgPHBhdGggZD0iTTE1LjQ3IDEzLjQ3IDE3IDE1bC0xLjUzIDEuNTNhMy41IDMuNSAwIDAgMS00Ljk0IDBMOSAxNWwxLjUzLTEuNTNhMy41IDMuNSAwIDAgMSA0Ljk0IDBaIiAvPgogIDxwYXRoIGQ9Ik0xOS40NyA5LjQ3IDIxIDExbC0xLjUzIDEuNTNhMy41IDMuNSAwIDAgMS00Ljk0IDBMMTMgMTFsMS41My0xLjUzYTMuNSAzLjUgMCAwIDEgNC45NCAwWiIgLz4KPC9zdmc+", "drumstick": "data:image/svg+xml;base64,PHN2ZwogIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWRydW1zdGljayIKICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgd2lkdGg9IjI0IgogIGhlaWdodD0iMjQiCiAgdmlld0JveD0iMCAwIDI0IDI0IgogIGZpbGw9Im5vbmUiCiAgc3Ryb2tlPSJjdXJyZW50Q29sb3IiCiAgc3Ryb2tlLXdpZHRoPSIyIgogIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIKICBzdHJva2UtbGluZWpvaW49InJvdW5kIgo+CiAgPHBhdGggZD0iTTE1LjQgMTUuNjNhNy44NzUgNiAxMzUgMSAxIDYuMjMtNi4yMyA0LjUgMy40MyAxMzUgMCAwLTYuMjMgNi4yMyIgLz4KICA8cGF0aCBkPSJtOC4yOSAxMi43MS0yLjYgMi42YTIuNSAyLjUgMCAxIDAtMS42NSA0LjY1QTIuNSAyLjUgMCAxIDAgOC43IDE4LjNsMi41OS0yLjU5IiAvPgo8L3N2Zz4=", "milk": "data:image/svg+xml;base64,PHN2ZwogIGNsYXNzPSJsdWNpZGUgbHVjaWRlLW1pbGsiCiAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogIHdpZHRoPSIyNCIKICBoZWlnaHQ9IjI0IgogIHZpZXdCb3g9IjAgMCAyNCAyNCIKICBmaWxsPSJub25lIgogIHN0cm9rZT0iY3VycmVudENvbG9yIgogIHN0cm9rZS13aWR0aD0iMiIKICBzdHJva2UtbGluZWNhcD0icm91bmQiCiAgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIKPgogIDxwYXRoIGQ9Ik04IDJoOCIgLz4KICA8cGF0aCBkPSJNOSAydjIuNzg5YTQgNCAwIDAgMS0uNjcyIDIuMjE5bC0uNjU2Ljk4NEE0IDQgMCAwIDAgNyAxMC4yMTJWMjBhMiAyIDAgMCAwIDIgMmg2YTIgMiAwIDAgMCAyLTJ2LTkuNzg5YTQgNCAwIDAgMC0uNjcyLTIuMjE5bC0uNjU2LS45ODRBNCA0IDAgMCAxIDE1IDQuNzg4VjIiIC8+CiAgPHBhdGggZD0iTTcgMTVhNi40NzIgNi40NzIgMCAwIDEgNSAwIDYuNDcgNi40NyAwIDAgMCA1IDAiIC8+Cjwvc3ZnPg=="};
+const IC = n => `url("${ICONS[n]}")`;
+const GRP = {
+  veg:{name:'Veggies',icon:'carrot',color:'#8fa073',ink:'#3d472b',home:150},
+  fruit:{name:'Fruit',icon:'apple',color:'#e0915c',ink:'#643312',home:210},
+  grains:{name:'Grains',icon:'wheat',color:'#d4ad5f',ink:'#5a4214',home:270},
+  protein:{name:'Protein',icon:'drumstick',color:'#b5695e',ink:'#4a1f19',home:90},
+  dairy:{name:'Dairy',icon:'milk',color:'#9db0bf',ink:'#2c3d4a',home:30}
+};
+const GORDER=['veg','fruit','grains','protein','dairy'];
+// iron: 2 = good source, 1 = some, 0 = little. c = vitamin C food. plant = non-animal iron (absorbs better with vitamin C).
+// Rule-of-thumb tiers from common paediatric guidance, not measured amounts.
+const FDB=[
+ {id:'spinach',n:'Spinach',g:'veg',iron:1,c:true,plant:true},{id:'broccoli',n:'Broccoli',g:'veg',iron:1,c:true,plant:true},
+ {id:'peas',n:'Peas',g:'veg',iron:1,c:true,plant:true},{id:'bellpepper',n:'Bell pepper',g:'veg',iron:0,c:true},
+ {id:'tomato',n:'Tomato',g:'veg',iron:0,c:true},{id:'carrot',n:'Carrot',g:'veg',iron:0},
+ {id:'sweetpotato',n:'Sweet potato',g:'veg',iron:0,c:true},{id:'greenbeans',n:'Green beans',g:'veg',iron:0},
+ {id:'cucumber',n:'Cucumber',g:'veg',iron:0},{id:'corn',n:'Corn',g:'veg',iron:0},
+ {id:'orange',n:'Orange',g:'fruit',iron:0,c:true},{id:'strawberry',n:'Strawberries',g:'fruit',iron:0,c:true},
+ {id:'kiwi',n:'Kiwi',g:'fruit',iron:0,c:true},{id:'mango',n:'Mango',g:'fruit',iron:0,c:true},
+ {id:'melon',n:'Cantaloupe',g:'fruit',iron:0,c:true},{id:'banana',n:'Banana',g:'fruit',iron:0},
+ {id:'apple',n:'Apple',g:'fruit',iron:0},{id:'pear',n:'Pear',g:'fruit',iron:0},{id:'grapes',n:'Grapes (halved)',g:'fruit',iron:0},
+ {id:'fortcereal',n:'Iron-fortified cereal',g:'grains',iron:2,plant:true,tags:['wheat'],swap:null},
+ {id:'fortoats',n:'Fortified oats',g:'grains',iron:2,plant:true},
+ {id:'wgtoast',n:'Whole-grain toast',g:'grains',iron:1,plant:true,tags:['wheat']},
+ {id:'roti',n:'Roti / chapati',g:'grains',iron:1,plant:true,tags:['wheat'],swap:null},
+ {id:'quinoa',n:'Quinoa',g:'grains',iron:1,plant:true},
+ {id:'brownrice',n:'Brown rice',g:'grains',iron:1,plant:true},
+ {id:'whiterice',n:'White rice',g:'grains',iron:0,swap:'brownrice'},
+ {id:'pasta',n:'Pasta',g:'grains',iron:0,tags:['wheat'],swap:'quinoa'},
+ {id:'whitebread',n:'White bread',g:'grains',iron:0,tags:['wheat'],swap:'wgtoast'},
+ {id:'crackers',n:'Crackers',g:'grains',iron:0,tags:['wheat'],swap:'fortcereal'},
+ {id:'idli',n:'Idli / dosa',g:'grains',iron:0,swap:'roti'},
+ {id:'redmeat',n:'Beef or lamb',g:'protein',iron:2},{id:'darkchicken',n:'Dark chicken or turkey',g:'protein',iron:1},
+ {id:'chickenbreast',n:'Chicken breast',g:'protein',iron:0,swap:'darkchicken'},
+ {id:'fish',n:'Salmon or fish',g:'protein',iron:1,tags:['fish']},{id:'egg',n:'Egg',g:'protein',iron:1,tags:['egg']},
+ {id:'lentils',n:'Lentils / dal',g:'protein',iron:2,plant:true},{id:'beans',n:'Beans / chickpeas',g:'protein',iron:2,plant:true},
+ {id:'tofu',n:'Tofu',g:'protein',iron:2,plant:true,tags:['soy']},
+ {id:'pbutter',n:'Peanut butter (thin)',g:'protein',iron:1,plant:true,tags:['peanut']},
+ {id:'milk',n:'Milk',g:'dairy',iron:0,tags:['dairy'],cup:true},{id:'soymilk',n:'Fortified soy milk',g:'dairy',iron:0,tags:['soy'],cup:true},
+ {id:'yogurt',n:'Yogurt',g:'dairy',iron:0,tags:['dairy']},{id:'cheese',n:'Cheese',g:'dairy',iron:0,tags:['dairy']},
+ {id:'paneer',n:'Paneer',g:'dairy',iron:0,tags:['dairy']}
+];
+const FOOD=Object.fromEntries(FDB.map(f=>[f.id,f]));
+const AVOIDS=[['peanut','Peanuts'],['egg','Eggs'],['dairy','Dairy'],['fish','Fish'],['soy','Soy'],['wheat','Wheat']];
+const DMEALS=['Breakfast','Lunch','Snack','Dinner'];
+const PLAN={Breakfast:['grains','fruit','dairy'],Lunch:['protein','veg','grains'],Snack:['fruit','dairy','grains'],Dinner:['protein','veg','grains']};
+const SLOTS=[{x:-56,y:-27,s:171,p:'½ plate'},{x:86,y:-68,s:108,p:'¼ plate'},{x:50,y:81,s:126,p:'¼ plate'}];
+
+// ---- storage (browser only; wrapped because storage can be unavailable)
+const KEY='cnp_diary_v1'; let mem=null;
+function load(){ try{ const s=localStorage.getItem(KEY); if(s) return JSON.parse(s); }catch(e){} return mem||{log:[],avoid:[]}; }
+function save(){ mem=D; try{ localStorage.setItem(KEY,JSON.stringify(D)); }catch(e){} }
+let D=load(); if(!Array.isArray(D.log)) D.log=[]; if(!Array.isArray(D.avoid)) D.avoid=[];
+
+const dd=id=>document.getElementById(id);
+const todayStr=()=>new Date().toLocaleDateString('en-CA');
+const addDays=(s,n)=>{const d=new Date(s+'T12:00:00');d.setDate(d.getDate()+n);return d.toLocaleDateString('en-CA');};
+let dDate=todayStr(), dMeal='Lunch', dCat='protein', dView='logged', dPending=null;
+const hr=new Date().getHours(); dMeal=hr<10?'Breakfast':hr<14?'Lunch':hr<17?'Snack':'Dinner';
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const allowed=f=>!(f.tags||[]).some(t=>D.avoid.includes(t));
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+const mealEntries=(date,meal)=>D.log.filter(e=>e.date===date&&e.meal===meal&&FOOD[e.food]);
+
+// ---- suggestions from the last 7 days
+function windowLog(){ const from=addDays(todayStr(),-6); return D.log.filter(e=>e.date>=from&&FOOD[e.food]); }
+function suggestions(){
+  const log=windowLog(), out=[];
+  if(!log.length) return [{tone:'ok',t:'Start with a few days of meals',d:'Log what your child eats for a few days and swap ideas will appear here.'}];
+  const days=[...new Set(log.map(e=>e.date))].sort().reverse(), last3=days.slice(0,3);
+  const l3=log.filter(e=>last3.includes(e.date));
+  const band = (typeof pv!=='undefined' && Object.keys(pv).length) ? riskCI(pv,{}).v/PREV : 1;
+  const hiNote = band>1.25 ? ' Your household answers put your child in the "somewhat higher than average" group, so this is worth a little more attention.' : '';
+  // A. no good iron source lately
+  const goodN=l3.filter(e=>FOOD[e.food].iron===2).length;
+  if(goodN===0){
+    const pick=['lentils','redmeat','fortcereal','beans','tofu','fortoats'].map(i=>FOOD[i]).filter(allowed).slice(0,3).map(f=>f.n).join(', ');
+    out.push({tone:'hi',t:'No iron-rich food in your last '+last3.length+' logged day'+(last3.length>1?'s':''),d:'Try adding one at most meals: '+(pick||'iron-rich foods your child can eat')+'.'+hiNote});
+  }
+  // B. swaps for frequent low-iron staples
+  const cnt={}; log.forEach(e=>{cnt[e.food]=(cnt[e.food]||0)+(e.qty||1);});
+  Object.entries(cnt).filter(([id,n])=>FOOD[id].swap&&n>=(goodN===0?1:2)).sort((a,b)=>b[1]-a[1]).forEach(([id,n])=>{
+    const to=FOOD[FOOD[id].swap]; if(!to||!allowed(to)||to.iron<=FOOD[id].iron) return;
+    out.push({tone:'hi',t:FOOD[id].n+' came up '+n+' time'+(n>1?'s':'')+' this week',d:to.n+' has more iron and fills the same spot on the plate.',swap:[FOOD[id].n,to.n]});
+  });
+  // C. plant iron without vitamin C in the same meal
+  const meals={}; log.forEach(e=>{(meals[e.date+'|'+e.meal]??=[]).push(FOOD[e.food]);});
+  const noC=Object.entries(meals).filter(([k,fs])=>fs.some(f=>f.plant&&f.iron>=1)&&!fs.some(f=>f.c));
+  if(noC.length){
+    const c=['orange','tomato','bellpepper','strawberry','kiwi'].map(i=>FOOD[i]).filter(allowed)[0];
+    const eg=noC[0][1].find(f=>f.plant&&f.iron>=1);
+    out.push({tone:'hi',t:noC.length+' meal'+(noC.length>1?'s':'')+' had plant iron but no vitamin C',d:'Vitamin C helps the body take up iron from plant foods. Add '+(c?c.n.toLowerCase():'a vitamin C food')+' next to '+eg.n.toLowerCase()+'.',swap:null});
+  }
+  // D. too much milk
+  const perDay={}; log.filter(e=>FOOD[e.food].cup).forEach(e=>{perDay[e.date]=(perDay[e.date]||0)+(e.qty||1);});
+  const big=Object.values(perDay).filter(n=>n>3).length;
+  if(big) out.push({tone:'hi',t:'More than 3 cups of milk on '+big+' day'+(big>1?'s':''),d:'Milk has almost no iron and can crowd out food. Aim for about 2 to 3 cups (16–24 oz) and offer water with meals.',swap:['Extra cup of milk','Water + iron-rich snack']});
+  // E. group missing lately
+  GORDER.forEach(g=>{ if(!l3.some(e=>FOOD[e.food].g===g)){ const eg=FDB.filter(f=>f.g===g&&allowed(f)).slice(0,3).map(f=>f.n).join(', ');
+    out.push({tone:'ok',t:GRP[g].name+' haven\'t appeared in your last '+last3.length+' logged day'+(last3.length>1?'s':''),d:'Ideas: '+eg+'.'}); }});
+  if(!out.length) out.push({tone:'ok',t:'Looks well balanced',d:'Iron-rich foods are showing up and vitamin C is paired with plant iron. Keep logging to track it.'});
+  return out.slice(0,4);
+}
+
+// ---- plate
+function suggestedPlate(meal){
+  const log=windowLog(), recent=new Set(log.filter(e=>e.date>=addDays(todayStr(),-2)).map(e=>e.food));
+  const score=f=>f.iron*2+(f.c?1:0)+(recent.has(f.id)?0:1.5);
+  const pick=g=>FDB.filter(f=>f.g===g&&allowed(f)).sort((a,b)=>score(b)-score(a))[0];
+  const picks=PLAN[meal].map(g=>({g,f:pick(g)})).filter(x=>x.f);
+  const plantIron=picks.some(x=>x.f.plant&&x.f.iron>=1), hasC=picks.some(x=>x.f.c);
+  if(plantIron&&!hasC){ const slot=picks.find(x=>x.g==='fruit')||picks.find(x=>x.g==='veg');
+    const c=FDB.filter(f=>f.c&&allowed(f)&&(!slot||f.g===slot.g)).sort((a,b)=>score(b)-score(a))[0]; if(slot&&c) slot.f=c; }
+  return picks.map(x=>({g:x.g,label:x.f.n,w:1}));
+}
+function loggedPlate(entries){
+  const by={}; entries.forEach(e=>{const f=FOOD[e.food]; (by[f.g]??={names:[],w:0}); by[f.g].names.push(e.label||f.n); by[f.g].w+=(e.qty||1);});
+  return Object.entries(by).sort((a,b)=>b[1].w-a[1].w).map(([g,v])=>({g,label:v.names.slice(0,2).join(', ')+(v.names.length>2?' +'+(v.names.length-2):''),w:v.w}));
+}
+const toks=GORDER.map(k=>{const g=GRP[k],t=document.createElement('div');t.className='dtok';t.style.borderColor=g.color;
+  t.innerHTML=`<span class="icon" style="-webkit-mask-image:${IC(g.icon)};mask-image:${IC(g.icon)}"></span><span class="food"></span><span class="portion"></span><span class="group">${g.name}</span>`;
+  dd('dStage').appendChild(t);return t;});
+function drawPlate(items){
+  const S=dd('dStage').clientWidth||520,k=S/640,CX=320;
+  const placed=items.slice(0,3);
+  GORDER.forEach((g,j)=>{
+    const G=GRP[g],t=toks[j],si=placed.findIndex(p=>p.g===g),on=si>=0;
+    let x,y,sz; if(on){x=CX+SLOTS[si].x;y=CX+SLOTS[si].y;sz=SLOTS[si].s;} else {const a=G.home*Math.PI/180;x=CX+270*Math.sin(a);y=CX-270*Math.cos(a);sz=76;}
+    t.classList.toggle('on',on);
+    Object.assign(t.style,{left:(x-sz/2)*k+'px',top:(y-sz/2)*k+'px',width:sz*k+'px',height:sz*k+'px',background:on?G.color:'var(--n-100)',color:on?G.ink:G.color,boxShadow:on?'var(--shadow-md)':'var(--shadow-sm)',zIndex:on?2:1});
+    const is=(on?(si===0?36:26):26)*k, ic=t.querySelector('.icon'); ic.style.width=is+'px'; ic.style.height=is+'px';
+    t.querySelector('.food').textContent=on?placed[si].label:''; t.querySelector('.portion').textContent=on?SLOTS[si].p:'';
+  });
+}
+
+// ---- render
+function dRender(){
+  dd('dDate').value=dDate; dd('dDate').max=todayStr();
+  dd('dMeals').innerHTML=''; DMEALS.forEach(m=>{const n=mealEntries(dDate,m).length,b=document.createElement('button');b.className='dm'+(m===dMeal?' on':'')+(n?' has':'');
+    b.innerHTML=`<span class="dot"></span><span><b>${m}</b><small>${n?n+' food'+(n>1?'s':'')+' logged':'Nothing yet'}</small></span>`;b.onclick=()=>{dMeal=m;dRender();};dd('dMeals').appendChild(b);});
+  // picker
+  dd('dCats').innerHTML=''; GORDER.forEach(g=>{const b=document.createElement('button');b.className='chip cat'+(g===dCat?' on':'');b.textContent=GRP[g].name;b.onclick=()=>{dCat=g;dd('dSearch').value='';dRender();};dd('dCats').appendChild(b);});
+  const q=dd('dSearch').value.trim().toLowerCase();
+  let list=FDB.filter(allowed), noMatch=false;
+  if(dPending) list=list.filter(f=>f.g===dCat);
+  else if(q){ list=list.filter(f=>f.n.toLowerCase().includes(q)); noMatch=!list.length; }
+  else list=list.filter(f=>f.g===dCat);
+  const cu=dd('dCustom');
+  if(dPending){cu.hidden=false;cu.innerHTML=`Saving “${esc(dPending)}” as the closest match. Pick a category above, then a food. <button id="dCancel">Cancel</button>`;dd('dCancel').onclick=()=>{dPending=null;dd('dSearch').value='';dRender();};}
+  else if(noMatch){cu.hidden=false;cu.innerHTML=`“${esc(dd('dSearch').value.trim())}” isn't in our list. <button id="dClosest">Choose the closest food</button>`;dd('dClosest').onclick=()=>{dPending=dd('dSearch').value.trim();dd('dSearch').value='';dRender();};}
+  else cu.hidden=true;
+  dd('dFoods').innerHTML=''; list.forEach(f=>{const b=document.createElement('button');b.className='chip';b.textContent=f.n;b.onclick=()=>addFood(f);dd('dFoods').appendChild(b);});
+  // entries
+  const es=mealEntries(dDate,dMeal);
+  dd('dEntries').innerHTML=es.length?'':'<div class="note">Nothing logged for this meal yet.</div>';
+  es.forEach(e=>{const f=FOOD[e.food],row=document.createElement('div');row.className='dent';
+    row.innerHTML=`<span class="nm">${esc(e.label||f.n)}${e.label&&e.label!==f.n?`<small>counted as ${esc(f.n)}</small>`:''}</span><button aria-label="Fewer">−</button><span>${e.qty||1}</span><button aria-label="More">+</button><button aria-label="Remove">×</button>`;
+    const [m,p,x]=row.querySelectorAll('button'); m.onclick=()=>{e.qty=Math.max(1,(e.qty||1)-1);save();dRender();}; p.onclick=()=>{e.qty=Math.min(9,(e.qty||1)+1);save();dRender();}; x.onclick=()=>{D.log=D.log.filter(y=>y.id!==e.id);save();dRender();};
+    dd('dEntries').appendChild(row);});
+  // plate
+  const sug=dView==='suggest'; dd('vLogged').classList.toggle('on',!sug); dd('vSuggest').classList.toggle('on',sug);
+  const items=sug?suggestedPlate(dMeal):loggedPlate(es);
+  dd('dCaption').textContent=sug?`Suggested ${dMeal.toLowerCase()} plate: leans on iron-rich foods and foods not eaten in the last 2 days, with vitamin C beside plant iron. It follows your leave-out list.`:(es.length?`${dMeal} on ${dDate===todayStr()?'today':dDate}. Foods are shown by group; the biggest groups take the plate.`:`Nothing logged for ${dMeal.toLowerCase()} yet. Add a food, or see a suggested plate.`);
+  drawPlate(items);
+  // suggestions, week, history, avoid
+  dd('dSuggest').innerHTML=suggestions().map(s=>`<div class="sug ${s.tone}"><b>${esc(s.t)}</b>${esc(s.d)}${s.swap?`<div class="swapline"><span class="from">${esc(s.swap[0])}</span><span>→</span><span class="to">${esc(s.swap[1])}</span></div>`:''}</div>`).join('');
+  const rows=[]; for(let i=0;i<7;i++){const d=addDays(todayStr(),-i),L=D.log.filter(e=>e.date===d&&FOOD[e.food]); if(!L.length) {rows.push(`<tr><td>${d.slice(5)}</td><td class="n muted" colspan="3">no log</td></tr>`);continue;}
+    const iron=L.filter(e=>FOOD[e.food].iron===2).reduce((a,e)=>a+(e.qty||1),0), gs=new Set(L.map(e=>FOOD[e.food].g)).size, cups=L.filter(e=>FOOD[e.food].cup).reduce((a,e)=>a+(e.qty||1),0);
+    rows.push(`<tr><td>${d.slice(5)}</td><td class="n">${iron}</td><td class="n">${gs}/5</td><td class="n">${cups}</td></tr>`);}
+  dd('dWeek').innerHTML=`<table class="wk"><tr><th>Day</th><th class="n">Iron-rich</th><th class="n">Groups</th><th class="n">Milk cups</th></tr>${rows.join('')}</table>`;
+  const byDay={}; D.log.filter(e=>FOOD[e.food]).forEach(e=>{(byDay[e.date]??=[]).push(e);});
+  dd('dHistory').innerHTML=Object.keys(byDay).sort().reverse().map(d=>`<div class="hist"><b>${d}</b><br>${DMEALS.map(m=>{const x=byDay[d].filter(e=>e.meal===m);return x.length?m+': '+x.map(e=>esc(e.label||FOOD[e.food].n)+(e.qty>1?' ×'+e.qty:'')).join(', '):'';}).filter(Boolean).join('<br>')}</div>`).join('')||'<div class="note">No history yet.</div>';
+  dd('dAvoid').innerHTML=''; AVOIDS.forEach(([k,l])=>{const b=document.createElement('button');b.className='chip'+(D.avoid.includes(k)?' on':'');b.textContent=l;b.onclick=()=>{D.avoid=D.avoid.includes(k)?D.avoid.filter(x=>x!==k):[...D.avoid,k];save();dRender();};dd('dAvoid').appendChild(b);});
+}
+function addFood(f){
+  D.log.push({id:uid(),date:dDate,meal:dMeal,food:f.id,label:dPending||f.n,qty:1}); dPending=null; dd('dSearch').value=''; save(); dView='logged'; dRender();
+}
+dd('dDate').onchange=e=>{dDate=e.target.value||todayStr();dRender();};
+dd('dSearch').oninput=()=>{dPending=null;dRender();};
+dd('vLogged').onclick=()=>{dView='logged';dRender();}; dd('vSuggest').onclick=()=>{dView='suggest';dRender();};
+let clearArmed=false;
+dd('dClear').onclick=()=>{ const b=dd('dClear'); if(!D.log.length) return;
+  if(!clearArmed){clearArmed=true;b.textContent='Tap again to clear everything';setTimeout(()=>{clearArmed=false;b.textContent='Clear history';},4000);return;}
+  clearArmed=false;b.textContent='Clear history';D.log=[];save();dRender(); };
+window.addEventListener('resize',()=>drawPlate(dView==='suggest'?suggestedPlate(dMeal):loggedPlate(mealEntries(dDate,dMeal))));
+// re-draw suggestions when household answers change (they set the "somewhat higher" note)
+const _pRender=pRender; pRender=function(){_pRender();dRender();};
+dRender();
 </script>
 </body></html>

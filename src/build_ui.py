@@ -20,7 +20,7 @@ def main():
         css.append(f"@font-face{{font-family:'{fam}';font-style:normal;font-weight:{wt};font-display:swap;"
                    f"src:url(data:font/woff2;base64,{b}) format('woff2');unicode-range:{RANGE['ext' if 'ext' in f else 'latin']}}}")
     payload = open(f"{ROOT}/results/ui_payload.json").read().replace("</", "<\\/")
-    html = open(f"{APP}/template.html").read().replace("__FONTS__", "\n".join(css)).replace("__PAYLOAD__", payload)
+    html = open(f"{APP}/template.html").read().replace("__FONTS__", "\n".join(css)).replace("__PAYLOAD__", payload).replace("__ICONS__", open(f"{APP}/icons.json").read())
     open(f"{APP}/index.html", "w").write(html)
     print("wrote app/index.html", round(len(html) / 1024), "KB")
 
