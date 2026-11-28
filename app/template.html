@@ -94,8 +94,22 @@ a{color:var(--accent-700)}
 .dtoggle button{all:unset;cursor:pointer;padding:6px 16px;border-radius:999px;font-size:13px;color:var(--n-700)}
 .dtoggle button.on{background:var(--n-100);color:var(--text);font-weight:700;box-shadow:var(--shadow-sm)}
 .dtoggle button:focus-visible{outline:2px solid var(--accent)}
-#t-parents>div>.two>div>.card,#t-parents>div>.two>.card{border-radius:36px;padding:30px}
+#t-parents .two>div>.card,#t-parents .two>.card{border-radius:36px;padding:30px}
 #pres{background:var(--n-100);box-shadow:var(--shadow-md)}
+.psum{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:18px 0 20px}@media(max-width:900px){.psum{grid-template-columns:1fr}}
+.sum{display:flex;align-items:center;gap:16px;padding:16px 22px;border-radius:28px;background:var(--n-100);box-shadow:var(--shadow-sm,0 1px 3px rgba(46,43,37,.14))}
+.sum .big{font-family:var(--heading);font-size:34px;line-height:1;white-space:nowrap}.sum .txt{font-size:13px;line-height:1.35}
+.sum.warm{background:var(--accent-100)}.sum.warm .big{color:var(--accent-700)}.sum.warm .txt{color:var(--accent-800)}
+.sum.good .big{color:var(--sage-800)}.sum.hi .big{color:var(--accent-700)}
+.ptabs{display:flex;gap:6px;flex-wrap:wrap}
+.ptab{all:unset;cursor:pointer;padding:12px 24px;border-radius:999px 999px 0 0;font-weight:700;font-size:15px;color:var(--n-700)}
+.ptab:hover{color:var(--text);background:rgba(32,30,29,.04)}.ptab[aria-selected="true"]{background:var(--surface);color:var(--text)}
+.ptab:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.ppanels{background:var(--surface);border-radius:0 28px 28px 28px;padding:26px 28px 14px;margin-bottom:22px}
+.ppanel[hidden]{display:none}
+.ppanels .card{background:var(--n-100)}
+.ppanels #pres{background:var(--n-200);box-shadow:none}
+.weekgrid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:20px;align-items:start}@media(max-width:900px){.weekgrid{grid-template-columns:1fr}}
 .prog{display:flex;gap:6px;align-items:center}.prog i{width:34px;height:9px;border-radius:999px;background:var(--n-300);transition:background .4s}.prog i.on{background:var(--sage-500)}
 .dots{display:grid;grid-template-columns:repeat(10,1fr);gap:8px;max-width:340px}
 .dots i{aspect-ratio:1;border-radius:50%;background:var(--n-300);transition:background .5s,box-shadow .5s}
@@ -120,12 +134,16 @@ a{color:var(--accent-700)}
 .qic.done{background:var(--sage-500);color:var(--n-100)}
 .qic span{width:20px;height:20px;background:currentColor;-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
 #pq .var{flex-direction:row;gap:14px;align-items:flex-start}#pq .var>div:last-child{display:flex;flex-direction:column;gap:8px}#pq label{font-weight:700;font-size:15px}
-#pq .chip{font-size:13.5px;padding:7px 14px;background:var(--n-100)}#pq .chip.on{background:var(--accent);color:var(--n-100);box-shadow:var(--shadow-sm,0 1px 3px rgba(0,0,0,.15))}#pq .chip.unk.on{background:var(--n-300);color:var(--text);box-shadow:none}
+#pq .chip{font-size:13.5px;padding:7px 14px;background:var(--n-200)}#pq .chip.on{background:var(--accent);color:var(--n-100);box-shadow:var(--shadow-sm,0 1px 3px rgba(0,0,0,.15))}#pq .chip.unk.on{background:var(--n-300);color:var(--text);box-shadow:none}
 .dstage{position:relative;width:min(540px,100%);aspect-ratio:1}
 .dring{position:absolute;inset:8%;border-radius:50%;border:2px dashed var(--n-400)}
 .dring-label{position:absolute;left:50%;top:3%;transform:translateX(-50%);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--n-700);background:var(--bg);padding:2px 10px}
 .dplate{position:absolute;left:21%;top:21%;width:58%;height:58%;border-radius:50%;background:var(--n-100);box-shadow:var(--shadow-lg),inset 0 0 0 12px var(--n-200)}
 .dtok{position:absolute;border-radius:50%;border:2px solid;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;text-align:center;transition:left .9s cubic-bezier(.5,1.35,.45,1),top .9s cubic-bezier(.5,1.35,.45,1),width .9s cubic-bezier(.5,1.35,.45,1),height .9s cubic-bezier(.5,1.35,.45,1),background .5s,box-shadow .5s}
+.hh{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:8px;font-size:13px;color:var(--n-700)}
+#pq .hh .chip{padding:3px 11px;font-size:12.5px}
+.dtok.sm .food{font-size:11px;padding:0 6px;line-height:1.1}.dtok.sm .portion{display:none}
+.advrow{display:flex;gap:10px;align-items:baseline;font-size:13.5px;line-height:1.4}.advrow b{flex:none;min-width:150px}
 .dtok .icon{display:block;background:currentColor;-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;transition:width .5s,height .5s}
 .dtok .food{font-weight:700;font-size:13px;line-height:1.15;padding:0 10px}
 .dtok .portion{font-size:11px;opacity:.75}.dtok .group{font-size:11px;font-weight:600;color:var(--n-700)}
@@ -156,20 +174,24 @@ a{color:var(--accent-700)}
     <div class="kicker" style="margin-top:8px">For parents of children aged 2–6</div>
     <h2 style="font-family:var(--heading);font-weight:400;font-size:34px;margin:4px 0 6px">Help your child get enough iron</h2>
     <div class="note" style="font-size:14px;max-width:720px">Iron is the nutrient young children most often fall short on, and low iron can lead to anaemia. Tell us a little about your household and we will show how your situation compares with other children, plus foods that help. Further down, log what your child eats and get swap ideas. This is general guidance, not a diagnosis.</div>
-    <div class="prog" id="pprog" style="margin-top:14px"></div><div class="note" id="pcount" style="margin:4px 0 0"></div>
-    <div class="two" style="margin-top:18px;align-items:start">
-      <div class="card"><div class="kicker">About your household</div><div id="pq" style="display:flex;flex-direction:column;gap:12px"></div>
-        <div class="note">Every question is optional. Nothing leaves your device.</div></div>
-      <div>
-        <div class="card" id="pres"></div>
-        <div class="card" id="pfood"></div>
-      </div>
+    <div class="psum" id="psum">
+      <div class="sum"><div class="big" id="sumRisk">–</div><div class="txt"><span id="sumRiskTxt">children like yours had anaemia</span><br><span class="muted" id="sumRiskNote">Answer the household questions</span></div></div>
+      <div class="sum"><div class="big" id="sumIron">0</div><div class="txt">iron-rich foods logged today<br><span class="muted" id="sumIronNote">Good sources like lentils, beef, fortified cereal</span></div></div>
+      <div class="sum warm"><div class="big" id="sumSwap">0</div><div class="txt"><span id="sumSwapTxt">swap ideas from</span><br>the last 7 days</div></div>
     </div>
-    <div class="kicker" style="margin-top:26px">Little Plate · food diary</div>
+    <div class="ptabs" role="tablist">
+      <button class="ptab" role="tab" aria-selected="true" data-tab="today">Today</button>
+      <button class="ptab" role="tab" aria-selected="false" data-tab="risk">Iron risk</button>
+      <button class="ptab" role="tab" aria-selected="false" data-tab="week">This week</button>
+      <button class="ptab" role="tab" aria-selected="false" data-tab="advice">General advice</button>
+    </div>
+    <div class="ppanels">
+      <section class="ppanel" id="pp-today" role="tabpanel">
+        <div class="kicker" style="margin-top:26px">Little Plate · food diary</div>
     <h2 style="font-family:var(--heading);font-weight:400;font-size:30px;margin:4px 0 6px">The plate follows the day</h2>
     <div class="note" style="font-size:14px;max-width:760px">Log what your child eats, pick the closest match if a food isn't listed, and we will spot gaps from the last 7 days and suggest swaps. Everything is saved only in this browser.</div>
-    <div class="diary" id="diary">
-      <div>
+        <div class="diary" id="diary">
+          <div>
         <div class="card">
           <div class="kicker">Day and meal</div>
           <input type="date" id="dDate" aria-label="Date">
@@ -188,21 +210,37 @@ a{color:var(--accent-700)}
           <div id="dEntries"></div>
         </div>
       </div>
-      <div class="center">
+          <div class="center">
         <div class="dtoggle" role="group" aria-label="Plate view">
           <button id="vLogged" class="on">What was eaten</button><button id="vSuggest">Suggested plate</button>
         </div>
         <div id="dCaption" class="note" style="text-align:center;max-width:460px"></div>
         <div class="dstage" id="dStage"><div class="dring"></div><div class="dring-label">Pantry</div><div class="dplate"></div></div>
       </div>
+          <div>
+            <div class="card"><div class="kicker">Swap ideas from your last 7 days</div><div id="dSuggest"></div></div>
+          </div>
+        </div>
+      </section>
+      <section class="ppanel" id="pp-risk" role="tabpanel" hidden>
+        <div class="prog" id="pprog"></div><div class="note" id="pcount" style="margin:4px 0 14px"></div>
+        <div class="two" style="align-items:start">
+      <div class="card"><div class="kicker">About your household</div><div id="pq" style="display:flex;flex-direction:column;gap:12px"></div>
+        <div class="note">Every question is optional. Nothing leaves your device.</div></div>
       <div>
-        <div class="card"><div class="kicker">Swap ideas from your last 7 days</div><div id="dSuggest"></div></div>
-        <div class="card"><div class="kicker">Last 7 days</div><div id="dWeek"></div>
-          <details style="margin-top:4px"><summary class="note" style="cursor:pointer">Full history</summary><div id="dHistory"></div></details>
-          <button class="btn ghost" id="dClear" style="align-self:flex-start;font-size:13px;padding:6px 14px">Clear history</button></div>
-        <div class="card"><div class="kicker">Foods to leave out</div><div class="chips" id="dAvoid"></div>
-          <div class="note">Suggestions skip these. Always follow your doctor's advice on allergies.</div></div>
+        <div class="card" id="pres"></div>
       </div>
+    </div>
+      </section>
+      <section class="ppanel" id="pp-advice" role="tabpanel" hidden>
+        <div class="two" style="align-items:start"><div class="card" id="pfood"></div><div class="card" id="padv"></div></div>
+      </section>
+      <section class="ppanel" id="pp-week" role="tabpanel" hidden>
+        <div class="weekgrid"><div class="card"><div class="kicker">Last 7 days</div><div id="dWeek"></div>
+          <details style="margin-top:4px"><summary class="note" style="cursor:pointer">Full history</summary><div id="dHistory"></div></details>
+          <button class="btn ghost" id="dClear" style="align-self:flex-start;font-size:13px;padding:6px 14px">Clear history</button></div><div class="card"><div class="kicker">Foods to leave out</div><div class="chips" id="dAvoid"></div>
+          <div class="note">Suggestions skip these. Always follow your doctor's advice on allergies.</div></div></div>
+      </section>
     </div>
     <div class="card"><div class="kicker">How the comparison works</div><div class="note">The comparison comes from a statistical model fitted on 664 US children in NHANES 2021–2023 (340 with a blood test). It looks at household circumstances, not at what your child eats, so it cannot tell you whether your child is low in iron. Only a blood test can do that: ask your child's doctor if you are worried, or if your child seems unusually tired, pale or irritable.</div></div>
     <div class="note" id="psrc" style="padding:0 6px"></div>
@@ -395,7 +433,15 @@ const PQ = [
   ['snap_past_year','Has your household used SNAP (food stamps) in the past year?',[['no',0],['yes',1]],null],
   ['food_security','Is there sometimes not enough food at home?',[['secure',0],['insecure',1]],{secure:'No, usually enough',insecure:'Yes, sometimes'}]
 ];
-let pv = {}, page = 2;
+let pv = {}, page = 2, hh = 4;
+// 2026 US federal poverty guideline (48 states + DC): $15,960 for one person plus $5,680 for each extra person
+const fpl=n=>15960+5680*(n-1), usd=n=>'$'+Math.round(n).toLocaleString('en-US');
+function incomeLabels(){
+  const f=fpl(hh), top=f*1.85, ch=pRows.income.children;
+  ch[1].textContent='Below '+usd(f); ch[2].textContent=usd(f)+' to '+usd(top); ch[3].textContent='Above '+usd(top);
+  document.getElementById('hhnote').innerHTML=`Yearly household income before tax. With ${hh} people, the US poverty line (2026) is <b>${usd(f)}</b>, and 1.85 times that is <b>${usd(top)}</b>.`;
+  [...document.getElementById('hhchips').children].forEach(b=>b.classList.toggle('on',+b.dataset.n===hh));
+}
 const pHost=document.getElementById('pq'), pRows={};
 (function(){
   const QIC={age:'baby',income:'wallet',wic_child:'heart-handshake',snap_past_year:'shopping-basket',food_security:'soup'};
@@ -407,7 +453,10 @@ const pHost=document.getElementById('pq'), pRows={};
     const mk=(t,cls,fn)=>{const b=document.createElement('button');b.className='chip '+cls;b.textContent=t;b.onclick=fn;c.appendChild(b);};
     mk('Not sure','unk',()=>{delete pv[n];pRender();});
     opts.forEach(([s,i])=>mk((lab&&lab[s])||SL[s],'',()=>{pv[n]=i;pRender();}));
-    pHost.appendChild(row); pRows[n]=c; });
+    pHost.appendChild(row); pRows[n]=c;
+    if(n==='income'){ const box=row.lastChild; const h=document.createElement('div'); h.className='hh'; h.innerHTML='<span>People in your household</span><span class="chips" id="hhchips"></span>'; box.appendChild(h);
+      [2,3,4,5,6,7,8].forEach(k=>{const b=document.createElement('button');b.className='chip';b.dataset.n=k;b.textContent=k===8?'8+':k;b.onclick=()=>{hh=k;pRender();};h.lastChild.appendChild(b);});
+      const nt=document.createElement('div'); nt.className='note'; nt.id='hhnote'; box.appendChild(nt); } });
 })();
 const FOODS=[['Meat, poultry, fish','beef, lamb, dark chicken or turkey, salmon. Iron from animal foods is absorbed best.'],
   ['Beans, lentils, tofu','mash or soften for small children.'],
@@ -424,6 +473,7 @@ const IRON=[
  {n:'Dark chicken or turkey',sv:'1 oz',mg:0.4,icon:'drumstick',tag:'Absorbed best',heme:true}];
 const ironOn=new Set([0,4]);
 function pRender(){
+  incomeLabels();
   [...pRows.age.children].forEach(b=>b.classList.toggle('on',+b.dataset.a===page));
   PQ.forEach(([n,,opts])=>[...pRows[n].children].forEach((b,k)=>b.classList.toggle('on',k===0?!(n in pv):pv[n]===opts[k-1][1])));
   const r=riskCI(pv,{}), rel=r.v/PREV, known=Object.keys(pv).length;
@@ -447,15 +497,19 @@ function pRender(){
   const target=page<=3?7:10, extra=[];
   if(pv.food_security===1||pv.income===0) extra.push('<b>Help with food costs:</b> if you are not already enrolled, WIC (for children under 5) and SNAP may be available to you. Ask your local health department or doctor how to apply.');
   const total=IRON.reduce((t,f,i)=>t+(ironOn.has(i)?f.mg:0),0), full=total>=target;
-  document.getElementById('pfood').innerHTML=`<div class="kicker">What helps</div>
-    <div style="font-family:var(--heading);font-size:24px;line-height:1.1">Build a day of iron</div>
+  document.getElementById('pfood').innerHTML=`<div class="kicker">Build a day of iron</div>
+    <div style="font-family:var(--heading);font-size:24px;line-height:1.1">How much is enough?</div>
     <div class="note" style="font-size:13.5px">At ${page} years, children need about <b>${target} mg of iron a day</b>. Tap the foods your child might eat today. Amounts are approximate, per toddler serving.</div>
     <div style="display:flex;align-items:baseline;gap:8px"><span style="font-family:var(--heading);font-size:30px;line-height:1">${total.toFixed(1)}</span><span class="note" style="font-size:14px">of ${target} mg today</span><span style="margin-left:auto;font-size:12.5px;font-weight:700;color:${full?'var(--sage-800)':'var(--accent-700)'}">${full?'Full day of iron':(target-total).toFixed(1)+' mg to go'}</span></div>
     <div class="meter"><div style="width:${Math.min(total/target,1)*100}%;${full?'background:var(--sage-500)':''}"></div></div>
-    <div class="ftiles" id="ftiles"></div>
+    <div class="ftiles" id="ftiles"></div>`;
+  document.getElementById('padv').innerHTML=`<div class="kicker">General advice</div>
+    <div style="font-family:var(--heading);font-size:24px;line-height:1.1">Habits that help</div>
     ${[['citrus','Add vitamin C at the same meal','Orange, strawberries, kiwi, tomato, bell pepper or broccoli help the body take up iron from plant foods.','var(--sage-100)','var(--sage-800)'],['milk','Keep milk under about 24 oz a day','Cow\'s milk has almost no iron, and more than about 24 oz (710 ml) a day is linked to low iron in young children.','var(--accent-100)','var(--accent-700)'],['cooking-pot','Cook in cast iron','Cast-iron pans add a little iron to the food.','var(--n-200)','var(--n-700)']].map(t=>`<div class="tip" style="background:${t[3]}"><div class="ci2" style="color:${t[4]}"><span style="-webkit-mask-image:${IC(t[0])};mask-image:${IC(t[0])}"></span></div><div><b style="font-size:14px">${t[1]}</b><div style="font-size:13px;line-height:1.4">${t[2]}</div></div></div>`).join('')}
+    <div class="kicker" style="margin-top:6px">Foods to offer</div>
+    ${FOODS.map(f=>`<div class="advrow"><b>${f[0]}</b><span>${f[1]}</span></div>`).join('')}
     ${extra.map(e=>`<div style="font-size:14px">${e}</div>`).join('')}
-    <div class="note">Do not give iron supplements unless your child's doctor advises it: too much iron is harmful.</div>`;
+    <div class="note">Do not give iron supplements unless your child's doctor advises it: too much iron is harmful. If you are worried, or your child seems unusually tired, pale or irritable, ask a doctor. Only a blood test can show low iron.</div>`;
   const ft=document.getElementById('ftiles');
   IRON.forEach((f,i)=>{const on=ironOn.has(i),b=document.createElement('button');b.className='ft'+(on?' on':'')+(f.heme?' heme':'');b.setAttribute('aria-pressed',on);
     const ic=IC(on?'check':f.icon);
@@ -516,8 +570,21 @@ const FICON={spinach:'leaf',broccoli:'leaf',peas:'bean',carrot:'carrot',sweetpot
 const ficon=f=>FICON[f.id]||GRP[f.g].icon;
 const AVOIDS=[['peanut','Peanuts'],['egg','Eggs'],['dairy','Dairy'],['fish','Fish'],['soy','Soy'],['wheat','Wheat']];
 const DMEALS=['Breakfast','Lunch','Snack','Dinner'];
-const PLAN={Breakfast:['grains','fruit','dairy'],Lunch:['protein','veg','grains'],Snack:['fruit','dairy','grains'],Dinner:['protein','veg','grains']};
-const SLOTS=[{x:-56,y:-27,s:171,p:'½ plate'},{x:86,y:-68,s:108,p:'¼ plate'},{x:50,y:81,s:126,p:'¼ plate'}];
+const PLAN={Breakfast:[['grains',2],['fruit',1],['protein',1],['dairy',1]],Lunch:[['protein',2],['veg',2],['grains',2],['fruit',1]],Snack:[['fruit',2],['dairy',1],['grains',1]],Dinner:[['protein',2],['veg',2],['grains',2]]};
+const ALLF=g=>FDB.filter(f=>f.g===g).map(f=>f.id);
+const POOL={
+ Breakfast:{grains:['fortcereal','fortoats','wgtoast','roti','idli'],protein:['egg','pbutter','lentils','tofu','beans'],fruit:ALLF('fruit'),dairy:['yogurt','milk','soymilk','cheese','paneer']},
+ Lunch:{protein:['lentils','beans','tofu','darkchicken','chickenbreast','fish','egg','redmeat'],veg:ALLF('veg'),grains:['brownrice','quinoa','roti','wgtoast','pasta','whiterice'],fruit:ALLF('fruit')},
+ Snack:{fruit:ALLF('fruit'),dairy:['yogurt','cheese','milk','soymilk','paneer'],grains:['fortcereal','crackers','wgtoast','roti']},
+ Dinner:{protein:['redmeat','lentils','beans','fish','darkchicken','tofu','chickenbreast','egg'],veg:ALLF('veg'),grains:['brownrice','quinoa','roti','pasta','whiterice']}
+};
+// where each food group sits on the plate, by how many groups are on it (x, y from the plate centre, diameter)
+const LAYOUTS={1:[{x:0,y:0,s:260}],2:[{x:-55,y:0,s:190},{x:95,y:35,s:130}],
+ 3:[{x:-56,y:-27,s:171},{x:86,y:-68,s:108},{x:50,y:81,s:126}],
+ 4:[{x:-60,y:-30,s:150},{x:80,y:-70,s:100},{x:85,y:60,s:112},{x:-45,y:90,s:100}],
+ 5:[{x:-62,y:-38,s:140},{x:72,y:-82,s:92},{x:96,y:28,s:100},{x:30,y:100,s:100},{x:-70,y:70,s:90}]};
+const FR={1:'⅛',2:'¼',3:'⅜',4:'½',5:'⅝',6:'¾',7:'⅞',8:'whole'};
+const frac=x=>{const k=Math.max(1,Math.min(8,Math.round(x*8)));return k===8?'whole plate':FR[k]+' plate';};
 
 // ---- storage (browser only; wrapped because storage can be unavailable)
 const KEY='cnp_diary_v1'; let mem=null;
@@ -576,16 +643,33 @@ function suggestions(){
 }
 
 // ---- plate
-function suggestedPlate(meal){
-  const log=windowLog(), recent=new Set(log.filter(e=>e.date>=addDays(todayStr(),-2)).map(e=>e.food));
-  const score=f=>f.iron*2+(f.c?1:0)+(recent.has(f.id)?0:1.5);
-  const pick=g=>FDB.filter(f=>f.g===g&&allowed(f)).sort((a,b)=>score(b)-score(a))[0];
-  const picks=PLAN[meal].map(g=>({g,f:pick(g)})).filter(x=>x.f);
-  const plantIron=picks.some(x=>x.f.plant&&x.f.iron>=1), hasC=picks.some(x=>x.f.c);
-  if(plantIron&&!hasC){ const slot=picks.find(x=>x.g==='fruit')||picks.find(x=>x.g==='veg');
-    const c=FDB.filter(f=>f.c&&allowed(f)&&(!slot||f.g===slot.g)).sort((a,b)=>score(b)-score(a))[0]; if(slot&&c) slot.f=c; }
-  return picks.map(x=>({g:x.g,label:x.f.n,w:1,icon:ficon(x.f)}));
+// One plan for the whole day, so breakfast, lunch, snack and dinner get different foods. Foods are chosen from lists that
+// suit each meal, favouring iron-rich foods (more so if none appeared in the last 3 days), foods not eaten lately, and
+// foods not already used by another meal today. A little date-based variety keeps each day from repeating the last.
+const hash=str=>{let h=0;for(const c of str)h=(h*31+c.charCodeAt(0))>>>0;return (h%1000)/1000;};
+function planDay(){
+  const today=todayStr(), log=windowLog(), last={}, cnt={};
+  log.forEach(e=>{const ago=Math.round((new Date(today+'T12:00:00')-new Date(e.date+'T12:00:00'))/864e5); last[e.food]=Math.min(last[e.food]??99,ago); cnt[e.food]=(cnt[e.food]||0)+(e.qty||1);});
+  const needIron=!log.some(e=>e.date>=addDays(today,-2)&&FOOD[e.food].iron===2);
+  const used=new Set(log.filter(e=>e.date===dDate).map(e=>e.food)), out={};
+  DMEALS.forEach(m=>{
+    const picks=[];
+    PLAN[m].forEach(([g,w])=>{
+      let pool=(POOL[m][g]||[]).map(i=>FOOD[i]).filter(f=>f&&allowed(f)); if(!pool.length) return;
+      const fresh=pool.filter(f=>!used.has(f.id)); if(fresh.length) pool=fresh;
+      const sc=f=>f.iron*(needIron?3:2)+(f.c?1:0)+Math.min(last[f.id]??8,8)*0.35-(cnt[f.id]||0)*0.45-(used.has(f.id)?2.5:0)+hash(dDate+m+f.id)*0.9;
+      picks.push({g,w,f:pool.sort((a,b)=>sc(b)-sc(a))[0],sc});
+    });
+    if(picks.some(x=>x.f.plant&&x.f.iron>=1)&&!picks.some(x=>x.f.c)){
+      const slot=picks.find(x=>x.g==='fruit')||picks.find(x=>x.g==='veg');
+      if(slot){const c=(POOL[m][slot.g]||[]).map(i=>FOOD[i]).filter(f=>f&&f.c&&allowed(f)).sort((a,b)=>slot.sc(b)-slot.sc(a))[0]; if(c) slot.f=c;}
+    }
+    picks.forEach(x=>used.add(x.f.id));
+    out[m]=picks.map(x=>({g:x.g,label:x.f.n,w:x.w,icon:ficon(x.f)})).sort((a,b)=>b.w-a.w);
+  });
+  return out;
 }
+const suggestedPlate=meal=>planDay()[meal]||[];
 function loggedPlate(entries){
   const by={}; entries.forEach(e=>{const f=FOOD[e.food]; (by[f.g]??={names:[],w:0,icon:ficon(f)}); by[f.g].names.push(e.label||f.n); by[f.g].w+=(e.qty||1);});
   return Object.entries(by).sort((a,b)=>b[1].w-a[1].w).map(([g,v])=>({g,icon:v.icon,label:v.names.slice(0,2).join(', ')+(v.names.length>2?' +'+(v.names.length-2):''),w:v.w}));
@@ -595,15 +679,15 @@ const toks=GORDER.map(k=>{const g=GRP[k],t=document.createElement('div');t.class
   dd('dStage').appendChild(t);return t;});
 function drawPlate(items){
   const S=dd('dStage').clientWidth||520,k=S/640,CX=320;
-  const placed=items.slice(0,3);
+  const placed=items, L=LAYOUTS[Math.min(placed.length,5)]||[], tot=placed.reduce((a,p)=>a+p.w,0)||1;
   GORDER.forEach((g,j)=>{
     const G=GRP[g],t=toks[j],si=placed.findIndex(p=>p.g===g),on=si>=0;
-    let x,y,sz; if(on){x=CX+SLOTS[si].x;y=CX+SLOTS[si].y;sz=SLOTS[si].s;} else {const a=G.home*Math.PI/180;x=CX+270*Math.sin(a);y=CX-270*Math.cos(a);sz=76;}
+    let x,y,sz; if(on){x=CX+L[si].x;y=CX+L[si].y;sz=L[si].s;} else {const a=G.home*Math.PI/180;x=CX+270*Math.sin(a);y=CX-270*Math.cos(a);sz=76;}
     t.classList.toggle('on',on);
     Object.assign(t.style,{left:(x-sz/2)*k+'px',top:(y-sz/2)*k+'px',width:sz*k+'px',height:sz*k+'px',background:on?G.color:'var(--n-100)',color:on?G.ink:G.color,boxShadow:on?'var(--shadow-md)':'var(--shadow-sm)',zIndex:on?2:1});
-    const is=(on?(si===0?36:26):26)*k, ic=t.querySelector('.icon'); ic.style.width=is+'px'; ic.style.height=is+'px';
+    const is=(on?Math.max(18,Math.min(40,L[si].s*.21)):26)*k, ic=t.querySelector('.icon'); ic.style.width=is+'px'; ic.style.height=is+'px';
     const im=IC(on?placed[si].icon:G.icon); ic.style.webkitMaskImage=im; ic.style.maskImage=im;
-    t.querySelector('.food').textContent=on?placed[si].label:''; t.querySelector('.portion').textContent=on?SLOTS[si].p:'';
+    t.querySelector('.food').textContent=on?placed[si].label:''; t.querySelector('.portion').textContent=on?frac(placed[si].w/tot):''; t.classList.toggle('sm',on&&L[si].s<115);
   });
 }
 
@@ -634,7 +718,7 @@ function dRender(){
   // plate
   const sug=dView==='suggest'; dd('vLogged').classList.toggle('on',!sug); dd('vSuggest').classList.toggle('on',sug);
   const items=sug?suggestedPlate(dMeal):loggedPlate(es);
-  dd('dCaption').textContent=sug?`Suggested ${dMeal.toLowerCase()} plate: leans on iron-rich foods and foods not eaten in the last 2 days, with vitamin C beside plant iron. It follows your leave-out list.`:(es.length?`${dMeal} on ${dDate===todayStr()?'today':dDate}. Foods are shown by group; the biggest groups take the plate.`:`Nothing logged for ${dMeal.toLowerCase()} yet. Add a food, or see a suggested plate.`);
+  dd('dCaption').textContent=sug?`Suggested ${dMeal.toLowerCase()} plate: foods that suit the meal, leaning on iron-rich foods and ones you have not had much lately, with vitamin C beside plant iron. Other meals today get different foods. It follows your leave-out list.`:(es.length?`${dMeal} on ${dDate===todayStr()?'today':dDate}. Every food group you log goes on the plate, and the bigger groups take more room.`:`Nothing logged for ${dMeal.toLowerCase()} yet. Add a food, or see a suggested plate.`);
   drawPlate(items);
   // suggestions, week, history, avoid
   dd('dSuggest').innerHTML=suggestions().map(s=>`<div class="sug ${s.tone}"><b>${esc(s.t)}</b>${esc(s.d)}${s.swap?`<div class="swapline"><span class="from">${esc(s.swap[0])}</span><span>→</span><span class="to">${esc(s.swap[1])}</span></div>`:''}</div>`).join('');
@@ -656,7 +740,22 @@ let clearArmed=false;
 dd('dClear').onclick=()=>{ const b=dd('dClear'); if(!D.log.length) return;
   if(!clearArmed){clearArmed=true;b.textContent='Tap again to clear everything';setTimeout(()=>{clearArmed=false;b.textContent='Clear history';},4000);return;}
   clearArmed=false;b.textContent='Clear history';D.log=[];save();dRender(); };
+document.querySelectorAll('.ptab').forEach(t=>t.onclick=()=>{
+  document.querySelectorAll('.ptab').forEach(x=>x.setAttribute('aria-selected',x===t));
+  document.querySelectorAll('.ppanel').forEach(x=>x.hidden=x.id!=='pp-'+t.dataset.tab);
+  if(t.dataset.tab==='today') drawPlate(dView==='suggest'?suggestedPlate(dMeal):loggedPlate(mealEntries(dDate,dMeal)));
+});
+function updateSummary(){
+  const known=Object.keys(pv).length, r=riskCI(pv,{}), rel=r.v/PREV, box=dd('sumRisk').closest('.sum');
+  dd('sumRisk').innerHTML=known?`${Math.round(r.v*100)}<span style="font-size:16px"> / 100</span>`:'–';
+  dd('sumRiskNote').textContent=!known?'Answer the household questions':rel>1.25?'Somewhat higher than average':rel<0.85?'Lower than average':'About average';
+  box.classList.toggle('hi',known&&rel>1.25); box.classList.toggle('good',known&&rel<=1.25);
+  const t=todayStr(), n=D.log.filter(e=>e.date===t&&FOOD[e.food]&&FOOD[e.food].iron===2).reduce((a,e)=>a+(e.qty||1),0);
+  dd('sumIron').textContent=n; dd('sumIronNote').textContent=n?'Good sources eaten today':'Good sources like lentils, beef, fortified cereal';
+  const sw=suggestions().length; dd('sumSwap').textContent=sw; dd('sumSwapTxt').textContent=sw===1?'swap idea from':'swap ideas from';
+}
 window.addEventListener('resize',()=>drawPlate(dView==='suggest'?suggestedPlate(dMeal):loggedPlate(mealEntries(dDate,dMeal))));
+updateSummary(); const _dR=dRender; dRender=function(){_dR();updateSummary();};
 // re-draw suggestions when household answers change (they set the "somewhat higher" note)
 const _pRender=pRender; pRender=function(){_pRender();dRender();};
 dRender();
